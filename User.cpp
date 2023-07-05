@@ -24,7 +24,12 @@ void User::removeObserver(Observer *o) {
     lists.remove(o);
 }
 
+void User::setListChange(std::string listName, std::string &itemName, int quantity) {
+//TODO add to list the item to change after some controls
+}
+
 void User::notifyObservers() {
+    //TODO use changes to update lists
     for( auto itr = lists.begin(); lists.end() != itr; ++itr) {
         //TODO (*itr)->update();
     }

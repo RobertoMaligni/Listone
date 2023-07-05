@@ -39,7 +39,7 @@ void experiment(){
 
 
 int main() {
-    experiment();
+    std::cout << std::to_string(false) << std::endl;
     /*
     Listone* listone = Listone::getInstance();
     listone->loginUser("FrancescoTotti","password");

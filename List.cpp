@@ -24,7 +24,7 @@ void List::update(std::string &itemName, int quantity) {
         item->setQuantity(quantity);
     }catch(std::exception& e){
         ItemFactory factory;
-        item = factory.createProduct(itemName);
+        item = factory.createItem(itemName);
         item->setQuantity(quantity);
         items.push_back(item);
     }
