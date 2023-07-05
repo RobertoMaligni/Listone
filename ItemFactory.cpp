@@ -4,7 +4,7 @@
 
 #include "ItemFactory.h"
 
-Item* ItemFactory::createProduct(std::string &name) {
+Item* ItemFactory::createItem(std::string &name) {
     std::string line = findProduct(name); //fine if propagate since the main has to handle this exception
 
     size_t pos = 0;

@@ -4,6 +4,13 @@
 
 #include "UserFactory.h"
 
-User *UserFactory::createProduct(std::string& userName, std::string& password) {
+User *UserFactory::createUser(std::string& userName, std::string& password) {
+    //TODO get user from file
+    //TODO userNotExists()
+    return nullptr;
+}
+
+User *UserFactory::createUser(int id, std::string &userName, std::string &password) {
+    //TODO create user on runtime
     return nullptr;
 }

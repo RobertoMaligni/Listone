@@ -11,7 +11,8 @@
 
 class UserFactory : public Factory{
 public:
-    User* createProduct(std::string& userName, std::string& password);
+    User* createUser(std::string& userName, std::string& password);
+    User* createUser(int id,std::string& userName, std::string& password);
 private:
     const std::string path = "../Files/Users.txt";
 };
