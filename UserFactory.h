@@ -6,10 +6,10 @@
 #define LISTONE_USERFACTORY_H
 
 
-#include "AbstractFactory.h"
+#include "Factory.h"
 #include "User.h"
 
-class UserFactory : public AbstractFactory{
+class UserFactory : public Factory{
 public:
     User* createProduct(std::string& userName, std::string& password);
 private:

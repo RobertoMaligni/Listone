@@ -2,8 +2,8 @@
 // Created by samuele on 02/07/23.
 //
 
-#ifndef LISTONE_ABSTRACTFACTORY_H
-#define LISTONE_ABSTRACTFACTORY_H
+#ifndef LISTONE_FACTORY_H
+#define LISTONE_FACTORY_H
 
 
 #include <string>
@@ -12,18 +12,15 @@
 #include <sstream>
 #include <algorithm>
 #include "Exceptions/ItemNotFound.h"
-#include "AbstractProduct.h"
 
-class AbstractFactory {
+class Factory {
 public:
-    virtual AbstractProduct* createProduct(std::string& name) = 0;
-    virtual AbstractProduct* createProduct(AbstractProduct* product, std::string& name) = 0;
     virtual void printFactory();
-    virtual ~AbstractFactory();
+    virtual ~Factory() = 0;
 protected:
     std::ifstream openFile();
     virtual std::string findProduct(std::string& name);
     const std::string path;
 };
 
-#endif //LISTONE_ABSTRACTFACTORY_H
+#endif //LISTONE_FACTORY_H

@@ -34,7 +34,7 @@ Item* List::findItem(const Item &item) const{
     auto findIter = std::find(items.begin(), items.end(), &item);
     if(findIter == items.end()){
         //TODO
-        throw ItemNotFound();
+        throw ItemNotFound("");
     }
     return *findIter;
 }
@@ -49,7 +49,7 @@ Item* List::findItem(const std::string& itemName) const{
     }
     if(findIter == items.end()){
         //TODO
-        throw ItemNotFound();
+        throw ItemNotFound("");
     }
     return *findIter;
 }

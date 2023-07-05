@@ -6,11 +6,12 @@
 #define LISTONE_ITEMFACTORY_H
 
 #include "Item.h"
-#include "AbstractFactory.h"
+#include "Factory.h"
 
-class ItemFactory : public AbstractFactory{
+class ItemFactory : public Factory{
 public:
-    Item* createProduct(std::string& name) override;
+    Item* createProduct(std::string& name);
+    ~ItemFactory() override;
 private:
     const std::string path = "../Files/Inventory.txt";
 };

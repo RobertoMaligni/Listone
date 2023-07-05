@@ -7,9 +7,8 @@
 
 
 #include <string>
-#include "AbstractProduct.h"
 
-class Item : public AbstractProduct{
+class Item {
 public:
     Item(std::string& name, std::string&  category,int quantity = 0);
     ~Item() = default;

@@ -19,7 +19,7 @@
 #include "User.h"
 
 
-class List : public Observer , public AbstractProduct{
+class List : public Observer{
 public:
     List(User* user, std::string& name);
     ~List() override;

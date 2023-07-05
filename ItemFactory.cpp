@@ -18,4 +18,6 @@ Item* ItemFactory::createProduct(std::string &name) {
     return new Item(name,token);
 }
 
+ItemFactory::~ItemFactory() {}
+
 

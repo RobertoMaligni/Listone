@@ -1,10 +1,10 @@
 //
 // Created by samuele on 02/07/23.
 //
-#include "AbstractFactory.h"
+#include "Factory.h"
 #include "Exceptions/FileError.h"
 
-void AbstractFactory::printFactory() {
+void Factory::printFactory() {
     std::string line;
     std::ifstream inventory(path.c_str());
     if(!inventory.is_open()){
@@ -18,7 +18,7 @@ void AbstractFactory::printFactory() {
     }
 }
 
-std::ifstream AbstractFactory::openFile() {
+std::ifstream Factory::openFile() {
     std::string line;
     std::ifstream file(path.c_str());
     if(!file.is_open()){
@@ -27,9 +27,9 @@ std::ifstream AbstractFactory::openFile() {
     return file;
 }
 
-std::string AbstractFactory::findProduct(std::string &name) {
+std::string Factory::findProduct(std::string &name) {
     std::string line;
-    std::ifstream file = AbstractFactory::openFile();
+    std::ifstream file = Factory::openFile();
     bool found = false;
     while(std::getline(file,line) && !found){
         std::replace(line.begin(), line.end(), ';', ' ');  // replace ';' by ' '
@@ -46,4 +46,4 @@ std::string AbstractFactory::findProduct(std::string &name) {
     return line;
 }
 
-AbstractFactory::~AbstractFactory() {}
+Factory::~Factory() {}

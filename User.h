@@ -9,9 +9,8 @@
 #include <string>
 #include <list>
 #include "Subject.h"
-#include "AbstractProduct.h"
 
-class User : public Subject , public AbstractProduct{
+class User : public Subject {
 public:
 
     User(int userId, std::string userName, std::string password);
