@@ -64,9 +64,13 @@ void User::createList(std::string &listName) {
     ListFactory factory;
     List* list;
     try {
-        list = factory.createList(listName);
+        list = factory.loadList(listName);
     }catch(ListNotFound& e){
         list = factory.createList(this,listName);
     }
     lists.push_back(list);
+}
+
+void User::saveLists() {
+    //TODO
 }

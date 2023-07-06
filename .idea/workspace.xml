@@ -20,25 +20,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Added specific exception (redundant?)">
-      <change afterPath="$PROJECT_DIR$/Exceptions/UserNotLoggedIn.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exceptions/UserNotLoggedIn.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ListUpdate.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ListUpdate.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+    <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Implemented way to update lists in loaded in memory, funtions in Listone implemented">
+      <change beforePath="$PROJECT_DIR$/Factory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Factory.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Item.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Item.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/List.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ListFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ListFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ListFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/ListFactory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Listone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Listone.h" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Observer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Observer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Subject.h" beforeDir="false" afterPath="$PROJECT_DIR$/Subject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/User.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/User.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/UserFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/UserFactory.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +118,7 @@
       <workItem from="1688559577924" duration="3701000" />
       <workItem from="1688565348590" duration="3988000" />
       <workItem from="1688570610365" duration="4437000" />
-      <workItem from="1688649551219" duration="10313000" />
+      <workItem from="1688649551219" duration="11201000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -182,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688652986113</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implemented way to update lists in loaded in memory, funtions in Listone implemented">
+      <option name="closed" value="true" />
+      <created>1688660318905</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688660318905</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +207,7 @@
     <MESSAGE value="Fixed Factory hierarchy" />
     <MESSAGE value="New user method for buffering changes at lists" />
     <MESSAGE value="Added specific exception (redundant?)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added specific exception (redundant?)" />
+    <MESSAGE value="Implemented way to update lists in loaded in memory, funtions in Listone implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented way to update lists in loaded in memory, funtions in Listone implemented" />
   </component>
 </project>

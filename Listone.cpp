@@ -69,7 +69,7 @@ void Listone::createList(std::string &name) const {
 
 void Listone::addNonOwnedList(std::string& listName) {
     ListFactory factory;
-    List* list = factory.createList(listName);
+    List* list = factory.loadList(listName);
     user->registerObserver(list);
 }
 

@@ -22,6 +22,7 @@ public:
     void createList(std::string& listName);
     void listUpdate( std::string& listName, std::string& itemName, int quantity);
     void listUpdate(int listID, std::string& itemName, int quantity);
+    void saveLists();
     int getUserId() const;
     std::string toString() const;
 

@@ -11,7 +11,7 @@
 
 class ListFactory : public Factory{
 public:
-    List* createList(std::string& listName);
+    List* loadList(std::string& listName);
     List* createList(const User* user,std::string& listName);
     ListUpdate* createListUpdate(std::string &listName, std::string &itemName, int quantity);
     ListUpdate* createListUpdate(int listId, std::string &itemName, int quantity);

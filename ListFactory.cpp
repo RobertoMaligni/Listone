@@ -6,7 +6,7 @@
 
 ListFactory::~ListFactory() {}
 
-List *ListFactory::createList(std::string &listName) {
+List *ListFactory::loadList(std::string &listName) {
     //TODO recover from file
     return nullptr;
 }
