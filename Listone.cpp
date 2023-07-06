@@ -55,3 +55,12 @@ void Listone::updateList(int listID, std::string &itemName, int quantity) {
     //TODO
 
 }
+
+void Listone::registerUser(std::string &userName, const std::string &password) {
+    //TODO
+
+}
+
+bool Listone::userExists(std::string &userName) {
+    return false;
+}

@@ -14,12 +14,15 @@ public:
     static Listone* getInstance();
     bool isRunning() const;
     void loginUser(std::string& userName, const std::string& password) const;
+    void registerUser(std::string& userName, const std::string& password);
     void logOut();
     void createList(std::string& name) const;
     void addNonOwnedList(int listID);
     void updateList(int listID,std::string& itemName, int quantity);
 
 private:
+    bool userExists(std::string& userName);
+
     Listone();
     Listone(const Listone& rs);
     Listone& operator= (const Listone& rs);
