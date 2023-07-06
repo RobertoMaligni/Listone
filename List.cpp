@@ -15,18 +15,20 @@ List::~List() {
     }
 }
 
-void List::update(std::string &itemName, int quantity) {
-    Item* item;
-    if(quantity < 0)
-        throw std::runtime_error("Quantity in Item cannot be < 0");
-    try{
-        item = findItem(itemName);
-        item->setQuantity(quantity);
-    }catch(std::exception& e){
-        ItemFactory factory;
-        item = factory.createItem(itemName);
-        item->setQuantity(quantity);
-        items.push_back(item);
+void List::update(int listID,std::string &itemName, int quantity) {
+    if(this->listID == listID) {
+        Item *item;
+        if (quantity < 0)
+            throw std::runtime_error("Quantity in Item cannot be < 0");
+        try {
+            item = findItem(itemName);
+            item->setQuantity(quantity);
+        } catch (std::exception &e) {
+            ItemFactory factory;
+            item = factory.createItem(itemName);
+            item->setQuantity(quantity);
+            items.push_back(item);
+        }
     }
 }
 
@@ -48,8 +50,7 @@ Item* List::findItem(const std::string& itemName) const{
         }
     }
     if(findIter == items.end()){
-        //TODO
-        throw ItemNotFound("");
+        throw ItemNotFound(itemName);
     }
     return *findIter;
 }

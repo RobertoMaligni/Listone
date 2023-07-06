@@ -8,21 +8,23 @@
 
 #include <string>
 #include "User.h"
+#include "UserFactory.h"
+#include "Exceptions/UserNotFound.h"
+#include "Exceptions/UserNotLoggedIn.h"
 
 class Listone {
 public:
     static Listone* getInstance();
     bool isRunning() const;
-    void loginUser(std::string& userName, const std::string& password) const;
-    void registerUser(std::string& userName, const std::string& password);
+    void loginUser(std::string& userName, std::string& password);
+    void registerUser(std::string& userName, std::string& password);
     void logOut();
     void createList(std::string& name) const;
-    void addNonOwnedList(int listID);
+    void addNonOwnedList(std::string& listName);
     void updateList(int listID,std::string& itemName, int quantity);
 
 private:
-    bool userExists(std::string& userName);
-
+    bool isLoggedIn() const;
     Listone();
     Listone(const Listone& rs);
     Listone& operator= (const Listone& rs);

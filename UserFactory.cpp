@@ -3,14 +3,15 @@
 //
 
 #include "UserFactory.h"
-
-User *UserFactory::createUser(std::string& userName, std::string& password) {
+//get user from file
+User *UserFactory::loadUser(std::string& userName, std::string& password) const{
     //TODO get user from file
     //TODO userNotExists()
     return nullptr;
 }
 
-User *UserFactory::createUser(int id, std::string &userName, std::string &password) {
+//create new user runtime
+User *UserFactory::createUser(std::string &userName, std::string &password) const{
     //TODO create user on runtime
     return nullptr;
 }

@@ -9,6 +9,7 @@
 #include <string>
 #include <list>
 #include "Subject.h"
+#include "ListUpdate.h"
 
 class User : public Subject {
 public:
@@ -17,22 +18,20 @@ public:
 
     void registerObserver(Observer *o) override;
     void removeObserver(Observer *o) override;
-    void notifyObservers() override;
-    void setListChange(std::string listName,std::string& itemName, int quantity);
+    void notifyObservers() const override;
+    void createList(std::string& listName);
+    void listUpdate( std::string& listName, std::string& itemName, int quantity);
+    void listUpdate(int listID, std::string& itemName, int quantity);
     int getUserId() const;
     std::string toString() const;
 
 private:
-    struct NewItem{
-        std::string listName;
-        std::string& itemName;
-        int quantity;
-    };
+    void loadUserLists();
 
     int userID;
     std::string userName;
     std::string password;
-    std::list<NewItem> changes;
+    std::list<ListUpdate*> buffer;
     std::list<Observer*> lists;
 };
 

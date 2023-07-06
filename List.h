@@ -24,7 +24,7 @@ public:
     List(User* user, std::string& name);
     ~List() override;
 
-    void update(std::string &itemName, int quantity) override;
+    void update(int listID,std::string &itemName, int quantity) override;
     const std::string &getName() const;
     int getOwnerId() const;
 

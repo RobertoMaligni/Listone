@@ -4,14 +4,24 @@
 
 #include "ListFactory.h"
 
+ListFactory::~ListFactory() {}
+
 List *ListFactory::createList(std::string &listName) {
     //TODO recover from file
     return nullptr;
 }
 
-List *ListFactory::createList(User *user, std::string &listName) {
+List *ListFactory::createList(const User *user, std::string &listName) {
     //TODO create at runtime
     return nullptr;
 }
 
-ListFactory::~ListFactory() {}
+ListUpdate *ListFactory::createListUpdate(std::string &listName, std::string &itemName, int quantity) {
+    //TODO
+    return nullptr;
+}
+
+ListUpdate *ListFactory::createListUpdate(int listId, std::string &itemName, int quantity) {
+    //TODO
+    return nullptr;
+}
