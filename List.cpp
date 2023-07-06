@@ -35,8 +35,7 @@ void List::update(int listID,std::string &itemName, int quantity) {
 Item* List::findItem(const Item &item) const{
     auto findIter = std::find(items.begin(), items.end(), &item);
     if(findIter == items.end()){
-        //TODO
-        throw ItemNotFound("");
+        throw ItemNotFound(item.getName());
     }
     return *findIter;
 }

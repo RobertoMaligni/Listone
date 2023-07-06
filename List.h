@@ -5,11 +5,6 @@
 #ifndef LISTONE_LIST_H
 #define LISTONE_LIST_H
 
-/**
- * TODO: find non redundant way to link lists to users
- *
- * */
-
 #include <list>
 #include <algorithm>
 #include "Item.h"

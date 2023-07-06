@@ -2,12 +2,12 @@
 // Created by samuele on 30/06/23.
 //
 
+#include <stdexcept>
 #include "Item.h"
 
 Item::Item(std::string &name,std::string& category, int quantity) : name (name), category(category) , quantity (quantity){
     if(quantity < 0){
-        //TODO specify
-        throw std::exception();
+        throw std::runtime_error("Item quantity cannot be < 0");
     }
 }
 

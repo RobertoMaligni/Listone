@@ -8,8 +8,7 @@ void Factory::printFactory() {
     std::string line;
     std::ifstream inventory(path.c_str());
     if(!inventory.is_open()){
-        //TODO specify
-        throw std::runtime_error("");
+        throw std::runtime_error("Unable to print factory");
     }
     //find line that has same product
     std::cout << "Content of '" << path << "'" << ":" << std::endl;
