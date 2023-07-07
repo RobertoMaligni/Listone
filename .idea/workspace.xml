@@ -20,8 +20,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Implemented way to update lists in loaded in memory, funtions in Listone implemented">
+    <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Reorganized (factory) files">
+      <change afterPath="$PROJECT_DIR$/Exceptions/IncorrectPassword.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exceptions/IncorrectPassword.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exceptions/FileError.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Exceptions/GenericFileError.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exceptions/FileError.h" beforeDir="false" afterPath="$PROJECT_DIR$/Exceptions/GenericFileError.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/Factory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/Factory.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/Factory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/Factory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/UserFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/UserFactory.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/UserFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/UserFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,10 +92,16 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Factories" />
       <recent name="$PROJECT_DIR$/Files" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Listone" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="Listone" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="Listone">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -111,7 +127,7 @@
       <workItem from="1688565348590" duration="3988000" />
       <workItem from="1688570610365" duration="4437000" />
       <workItem from="1688649551219" duration="11201000" />
-      <workItem from="1688735105598" duration="659000" />
+      <workItem from="1688735105598" duration="4902000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -169,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688660318905</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Reorganized (factory) files">
+      <option name="closed" value="true" />
+      <created>1688736082713</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688736082713</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +225,7 @@
     <MESSAGE value="New user method for buffering changes at lists" />
     <MESSAGE value="Added specific exception (redundant?)" />
     <MESSAGE value="Implemented way to update lists in loaded in memory, funtions in Listone implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented way to update lists in loaded in memory, funtions in Listone implemented" />
+    <MESSAGE value="Reorganized (factory) files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganized (factory) files" />
   </component>
 </project>

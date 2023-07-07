@@ -2,35 +2,25 @@
 // Created by samuele on 02/07/23.
 //
 #include "Factory.h"
-#include "../Exceptions/FileError.h"
+#include "../Exceptions/GenericFileError.h"
 
 void Factory::printFactory() {
-    std::string line;
-    std::ifstream inventory(path.c_str());
-    if(!inventory.is_open()){
-        throw std::runtime_error("Unable to print factory");
-    }
-    //find line that has same product
-    std::cout << "Content of '" << path << "'" << ":" << std::endl;
-    while(std::getline(inventory,line)){
-       std::cout << line << std::endl;
-    }
+    //TODO
 }
 
-std::ifstream Factory::openFile() {
-    std::string line;
-    std::ifstream file(path.c_str());
-    if(!file.is_open()){
-        throw FileError(path);
+std::ifstream* Factory::openFile() {
+    auto file = new std::ifstream(path.c_str());
+    if(!file->is_open()){
+        throw GenericFileError(path);
     }
     return file;
 }
 
 std::string Factory::findProduct(std::string &name) {
+    std::ifstream* file = this->openFile();
     std::string line;
-    std::ifstream file = Factory::openFile();
     bool found = false;
-    while(std::getline(file,line) && !found){
+    while(std::getline(*file,line) && !found){
         std::replace(line.begin(), line.end(), ';', ' ');  // replace ';' by ' '
         std::stringstream ss(line);
         std::string token;
@@ -40,9 +30,15 @@ std::string Factory::findProduct(std::string &name) {
         }
     }
     if(!found) {
-        throw FileError(path);
+        throw GenericFileError(path);
     }
+    file->close();
     return line;
 }
 
+bool Factory::isEmpty(std::ifstream& file){
+    return file.peek() == std::ifstream::traits_type::eof();
+}
+
 Factory::~Factory() {}
+

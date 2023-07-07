@@ -17,8 +17,9 @@ class Factory {
 public:
     virtual void printFactory();
     virtual ~Factory() = 0;
+    bool isEmpty(std::ifstream& file);
 protected:
-    std::ifstream openFile();
+    std::ifstream* openFile();
     virtual std::string findProduct(std::string& name);
     const std::string path;
 };
