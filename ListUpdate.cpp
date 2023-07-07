@@ -4,17 +4,6 @@
 
 #include "ListUpdate.h"
 
-ListUpdate::ListUpdate(int listId, const std::string &listName, std::string &itemName, int quantity) : listID(listId),
-                                                                                                       listName(
-                                                                                                               listName),
-                                                                                                       itemName(
-                                                                                                               itemName),
-                                                                                                       quantity(
-                                                                                                               quantity) {}
-
-ListUpdate::ListUpdate(int listId, std::string &itemName, int quantity) : listID(listId), itemName(itemName),
-                                                                          quantity(quantity) {}
-
 ListUpdate::ListUpdate(const std::string &listName, std::string &itemName, int quantity) : listName(listName),
                                                                                            itemName(itemName),
                                                                                            quantity(quantity) {}

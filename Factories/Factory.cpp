@@ -8,7 +8,7 @@ void Factory::printFactory() {
     //TODO
 }
 
-std::ifstream* Factory::openFile() {
+std::ifstream* Factory::openFile(const std::string& path) {
     auto file = new std::ifstream(path.c_str());
     if(!file->is_open()){
         throw GenericFileError(path);
@@ -17,7 +17,7 @@ std::ifstream* Factory::openFile() {
 }
 
 std::string Factory::findProduct(std::string &name) {
-    std::ifstream* file = this->openFile();
+    std::ifstream* file = this->openFile(path);
     std::string line;
     bool found = false;
     while(std::getline(*file,line) && !found){

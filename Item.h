@@ -22,6 +22,7 @@ public:
     const std::string &getName() const;
     int getQuantity() const;
     void setQuantity(int quantity);
+    const std::string &getCategory() const;
     std::string toString() const;
 
 private:

@@ -14,9 +14,9 @@ public:
     List* loadList(std::string& listName);
     List* createList(const User* user,std::string& listName);
     ListUpdate* createListUpdate(std::string &listName, std::string &itemName, int quantity);
-    ListUpdate* createListUpdate(int listId, std::string &itemName, int quantity);
     ~ListFactory() override;
 private:
+    int getLastListID();
     const std::string path = "../Files/";
 };
 

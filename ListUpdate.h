@@ -10,9 +10,7 @@
 
 class ListUpdate {
 public:
-    ListUpdate(int listId, const std::string &listName, std::string &itemName, int quantity);
     ListUpdate(const std::string &listName, std::string &itemName, int quantity);
-    ListUpdate(int listId, std::string &itemName, int quantity);
 
     int getListId() const;
     const std::string &getListName() const;

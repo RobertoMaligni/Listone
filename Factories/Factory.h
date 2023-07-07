@@ -19,7 +19,7 @@ public:
     virtual ~Factory() = 0;
     bool isEmpty(std::ifstream& file);
 protected:
-    std::ifstream* openFile();
+    std::ifstream* openFile(const std::string& path);
     virtual std::string findProduct(std::string& name);
     const std::string path;
 };

@@ -39,6 +39,35 @@ User *UserFactory::loadUser(std::string& userName, std::string& password){
     return new User(userID,userName,password);
 }
 
+User *UserFactory::loadUser(int userID) {
+    //TODO
+    std::string line = std::to_string(userID);
+    try{
+        line = this->findProduct(line);
+    }catch(GenericFileError& e){
+        throw UserNotFound(std::to_string(userID));
+    }
+    std::stringstream ss(line);
+    std::string token, userName,password;
+    for (int i = 0; ss >> token; i++){
+        switch(i){
+            case 0:
+                if(userID != std::stoi(token))
+                    throw std::runtime_error(""); //should be impossible
+                break;
+            case 1:
+                userName = token;
+                break;
+            case 2:
+                password = token;
+                break;
+            default:
+                throw std::runtime_error("");//should be impossible
+        }
+    }
+    return new User(userID,userName,password);
+}
+
 //create new user runtime
 User *UserFactory::createUser(std::string &userName, std::string &password){
     try{
@@ -55,7 +84,7 @@ User *UserFactory::createUser(std::string &userName, std::string &password){
 
 int UserFactory::getLastUserID() {
     std::string line;
-    std::ifstream* file = this->openFile();
+    std::ifstream* file = this->openFile(path);
     if(this->isEmpty(*file)){ //No user registered
         return 0;
     }
@@ -67,5 +96,6 @@ int UserFactory::getLastUserID() {
     ss >> token; //ID
     return std::stoi(token);
 }
+
 
 

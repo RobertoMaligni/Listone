@@ -20,18 +20,22 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Reorganized (factory) files">
-      <change afterPath="$PROJECT_DIR$/Exceptions/IncorrectPassword.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exceptions/IncorrectPassword.h" afterDir="false" />
+    <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Implemented UserFactory methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exceptions/FileError.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Exceptions/GenericFileError.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exceptions/FileError.h" beforeDir="false" afterPath="$PROJECT_DIR$/Exceptions/GenericFileError.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Factories/Factory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/Factory.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Factories/Factory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/Factory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/ListFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/ListFactory.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/ListFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/ListFactory.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Factories/UserFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/UserFactory.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Factories/UserFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/UserFactory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/MyGroceries" beforeDir="false" afterPath="$PROJECT_DIR$/Files/MyGroceries" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Item.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Item.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Item.h" beforeDir="false" afterPath="$PROJECT_DIR$/Item.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/List.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ListUpdate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ListUpdate.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ListUpdate.h" beforeDir="false" afterPath="$PROJECT_DIR$/ListUpdate.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Observer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Observer.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +131,7 @@
       <workItem from="1688565348590" duration="3988000" />
       <workItem from="1688570610365" duration="4437000" />
       <workItem from="1688649551219" duration="11201000" />
-      <workItem from="1688735105598" duration="4902000" />
+      <workItem from="1688735105598" duration="10734000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -193,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688736082713</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implemented UserFactory methods">
+      <option name="closed" value="true" />
+      <created>1688740034426</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1688740034426</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +238,7 @@
     <MESSAGE value="Added specific exception (redundant?)" />
     <MESSAGE value="Implemented way to update lists in loaded in memory, funtions in Listone implemented" />
     <MESSAGE value="Reorganized (factory) files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reorganized (factory) files" />
+    <MESSAGE value="Implemented UserFactory methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented UserFactory methods" />
   </component>
 </project>

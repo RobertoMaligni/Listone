@@ -12,6 +12,7 @@
 class UserFactory : public Factory{
 public:
     User* loadUser(std::string& userName, std::string& password);
+    User* loadUser(int userID);
     User* createUser(std::string& userName, std::string& password);
 private:
     int getLastUserID();

@@ -4,10 +4,15 @@
 
 #include "List.h"
 
-List::List(User *user, std::string &name) : name(name){
+#include <utility>
+
+List::List(User *user, std::string &name) : listName(name){
     user->registerObserver(this);
-    ownerID = user->getUserId();
+    ownerIDs.push_back(user->getUserId());
 }
+
+List::List(const std::list<int> &ownerIDs, const std::string &listName, const std::list<Item *> &items) : ownerIDs(
+        ownerIDs), listName(listName), items(items) {}
 
 List::~List() {
     for(auto& it : items){
@@ -15,14 +20,15 @@ List::~List() {
     }
 }
 
-void List::update(int listID,std::string &itemName, int quantity) {
-    if(this->listID == listID) {
+void List::update(std::string& listName,std::string &itemName, int quantity) {
+    if(this->listName == listName) {
         Item *item;
         if (quantity < 0)
             throw std::runtime_error("Quantity in Item cannot be < 0");
         try {
             item = findItem(itemName);
             item->setQuantity(quantity);
+            //TODO specify
         } catch (std::exception &e) {
             ItemFactory factory;
             item = factory.createItem(itemName);
@@ -55,9 +61,10 @@ Item* List::findItem(const std::string& itemName) const{
 }
 
 const std::string &List::getName() const {
-    return name;
+    return listName;
 }
 
-int List::getOwnerId() const {
-    return ownerID;
+const std::list<Item *> &List::getItems() const {
+    return items;
 }
+

@@ -48,3 +48,7 @@ bool Item::operator!=(const Item &rhs) const {
     return !(rhs == *this);
 }
 
+const std::string &Item::getCategory() const {
+    return category;
+}
+
