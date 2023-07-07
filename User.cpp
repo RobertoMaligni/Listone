@@ -3,7 +3,7 @@
 //
 
 #include "User.h"
-#include "ListFactory.h"
+#include "Factories/ListFactory.h"
 #include "Exceptions/ListNotFound.h"
 
 #include <utility>

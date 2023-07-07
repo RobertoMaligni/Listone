@@ -8,7 +8,7 @@
 
 #include <string>
 #include "User.h"
-#include "UserFactory.h"
+#include "Factories/UserFactory.h"
 #include "Exceptions/UserNotFound.h"
 #include "Exceptions/UserNotLoggedIn.h"
 

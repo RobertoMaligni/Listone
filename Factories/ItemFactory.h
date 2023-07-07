@@ -5,7 +5,7 @@
 #ifndef LISTONE_ITEMFACTORY_H
 #define LISTONE_ITEMFACTORY_H
 
-#include "Item.h"
+#include "../Item.h"
 #include "Factory.h"
 
 class ItemFactory : public Factory{

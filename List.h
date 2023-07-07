@@ -10,7 +10,7 @@
 #include "Item.h"
 #include "Observer.h"
 #include "Subject.h"
-#include "ItemFactory.h"
+#include "Factories/ItemFactory.h"
 #include "User.h"
 
 
