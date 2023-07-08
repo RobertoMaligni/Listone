@@ -7,6 +7,7 @@
 
 #include <list>
 #include <algorithm>
+#include <array>
 #include "Item.h"
 #include "Observer.h"
 #include "Subject.h"

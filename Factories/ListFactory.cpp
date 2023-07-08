@@ -4,6 +4,7 @@
 
 #include "ListFactory.h"
 #include "UserFactory.h"
+#include "../Exceptions/GenericFileError.h"
 
 ListFactory::~ListFactory() {}
 
@@ -58,31 +59,21 @@ List *ListFactory::loadList(std::string &listName) {
     return new List(userIDs,listName,items);
 }
 
-List *ListFactory::createList(const User *user, std::string &listName) {
-    //TODO create at runtime
-    return nullptr;
+List *ListFactory::createList(User *user, std::string &listName) {
+    try {
+        delete this->openFile(path + listName + ".txt"); //list exists?
+        throw std::runtime_error("'" + listName + "' already exists");
+    }catch(GenericFileError& e){
+        //list dont exists
+        return new List(user, listName);;
+    }
 }
 
 ListUpdate *ListFactory::createListUpdate(std::string &listName, std::string &itemName, int quantity) {
-    //TODO
-    return nullptr;
-}
-
-int ListFactory::getLastListID() {
-    //TODO
-    /*
-    std::string line;
-    std::ifstream* file = this->openFile();
-    if(this->isEmpty(*file)){ //No user registered
-        return 0;
-    }
-    bool found = false;
-    while(std::getline(*file,line)){}
-    std::replace(line.begin(), line.end(), ';', ' ');  // replace ';' by ' '
-    std::stringstream ss(line);
-    std::string token;
-    ss >> token; //ID
-    return std::stoi(token);
-    */
-    return 0;
+    if(quantity < 0)
+        throw std::runtime_error("");
+    delete this->openFile(path + listName + ".txt"); //list exists?
+    ItemFactory factory;
+    delete factory.createItem(itemName); //item exist?
+    return new ListUpdate(listName,itemName,quantity);
 }

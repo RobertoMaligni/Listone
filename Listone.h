@@ -4,7 +4,6 @@
 
 #ifndef LISTONE_LISTONE_H
 #define LISTONE_LISTONE_H
-//TODO application class
 
 #include <string>
 #include "User.h"
@@ -21,7 +20,7 @@ public:
     void logOut();
     void createList(std::string& name) const;
     void addNonOwnedList(std::string& listName);
-    void updateList(int listID,std::string& itemName, int quantity);
+    void updateList(std::string &listName,std::string& itemName, int quantity);
 
 private:
     bool isLoggedIn() const;

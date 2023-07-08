@@ -4,6 +4,6 @@
 
 #include "IncorrectPassword.h"
 
-IncorrectPassword::IncorrectUsernameOrPassword() : std::runtime_error("Password not correct.") {
+IncorrectPassword::IncorrectPassword() : std::runtime_error("Password not correct.") {
 
 }

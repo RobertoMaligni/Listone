@@ -3,10 +3,14 @@
 //
 
 #include "List.h"
+#include "Exceptions/GenericFileError.h"
 
 #include <utility>
 
-List::List(User *user, std::string &name) : listName(name){
+List::List( User* user, std::string &name) : listName(name){
+    if(user == nullptr){
+        throw std::runtime_error("User not passed");
+    }
     user->registerObserver(this);
     ownerIDs.push_back(user->getUserId());
 }
@@ -20,16 +24,15 @@ List::~List() {
     }
 }
 
-void List::update(std::string& listName,std::string &itemName, int quantity) {
+void List::update( std::string& listName, std::string &itemName, int quantity) {
+    if (quantity < 0)
+        throw std::runtime_error("Quantity in Item cannot be < 0");
     if(this->listName == listName) {
         Item *item;
-        if (quantity < 0)
-            throw std::runtime_error("Quantity in Item cannot be < 0");
         try {
             item = findItem(itemName);
             item->setQuantity(quantity);
-            //TODO specify
-        } catch (std::exception &e) {
+        } catch (GenericFileError& e) {
             ItemFactory factory;
             item = factory.createItem(itemName);
             item->setQuantity(quantity);

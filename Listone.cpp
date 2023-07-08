@@ -73,11 +73,11 @@ void Listone::addNonOwnedList(std::string& listName) {
     user->registerObserver(list);
 }
 
-void Listone::updateList(int listID, std::string &itemName, int quantity) {
+void Listone::updateList(std::string &listName, std::string &itemName, int quantity) {
     if(!this->isLoggedIn()){
         throw UserNotLoggedIn();
     }
-    user->listUpdate(listID,itemName,quantity);
+    user->listUpdate(listName,itemName,quantity);
 
 }
 

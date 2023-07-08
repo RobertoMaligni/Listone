@@ -4,7 +4,7 @@
 
 #include "ListUpdate.h"
 
-ListUpdate::ListUpdate(const std::string &listName, std::string &itemName, int quantity) : listName(listName),
+ListUpdate::ListUpdate(std::string &listName, std::string &itemName, int quantity) : listName(listName),
                                                                                            itemName(itemName),
                                                                                            quantity(quantity) {}
 
@@ -16,7 +16,7 @@ const std::string &ListUpdate::getListName() const {
     return listName;
 }
 
-std::string &ListUpdate::getItemName() const {
+const std::string &ListUpdate::getItemName() const {
     return itemName;
 }
 

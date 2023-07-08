@@ -33,15 +33,11 @@ void User::listUpdate( std::string& listName, std::string &itemName, int quantit
     buffer.push_back(factory.createListUpdate(listName, itemName, quantity));
 }
 
-void User::listUpdate(int listID, std::string &itemName, int quantity) {
-    ListFactory factory;
-    buffer.push_back(factory.createListUpdate(listID, itemName, quantity));
-}
-
 void User::notifyObservers() const{
     for(auto update : buffer) {
         for (auto itr : lists) {
-            itr->update(update->getListId(),update->getItemName(),update->getQuantity());
+            itr->update(const_cast<std::string &>(update->getListName()),
+                        const_cast<std::string &>(update->getItemName()), update->getQuantity());
         }
         delete update;
     }
