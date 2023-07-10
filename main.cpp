@@ -1,9 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <algorithm>
 #include "Listone.h"
-
 /**
  * Testo dell'elaborato:
  *
@@ -19,9 +14,5 @@
 
 int main() {
 
-    Listone* listone = Listone::getInstance();
-    std::string user("FrancescoTotti");
-    std::string password = "password";
-    //listone->loginUser(std::string("FrancescoTotti"),"password");
     return 0;
 }

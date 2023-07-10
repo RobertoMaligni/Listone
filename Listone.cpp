@@ -78,7 +78,6 @@ void Listone::updateList(const std::string &listName, const std::string &itemNam
         throw UserNotLoggedIn();
     }
     user->listUpdate(listName,itemName,quantity);
-
 }
 
 bool Listone::isLoggedIn() const{
