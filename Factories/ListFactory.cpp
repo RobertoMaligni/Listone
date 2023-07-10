@@ -8,7 +8,7 @@
 
 ListFactory::~ListFactory() {}
 
-List *ListFactory::loadList(std::string &listName) {
+List *ListFactory::loadList(const std::string &listName) {
     std::ifstream* file = this->openFile(path + listName + ".txt");
 
     //load userIDs
@@ -59,7 +59,7 @@ List *ListFactory::loadList(std::string &listName) {
     return new List(userIDs,listName,items);
 }
 
-List *ListFactory::createList(User *user, std::string &listName) {
+List *ListFactory::createList(User *user, const std::string &listName) {
     try {
         delete this->openFile(path + listName + ".txt"); //list exists?
         throw std::runtime_error("'" + listName + "' already exists");
@@ -69,7 +69,7 @@ List *ListFactory::createList(User *user, std::string &listName) {
     }
 }
 
-ListUpdate *ListFactory::createListUpdate(std::string &listName, std::string &itemName, int quantity) {
+ListUpdate *ListFactory::createListUpdate(const std::string &listName, const std::string &itemName, int quantity) {
     if(quantity < 0)
         throw std::runtime_error("");
     delete this->openFile(path + listName + ".txt"); //list exists?

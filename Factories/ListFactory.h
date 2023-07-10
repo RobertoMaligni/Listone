@@ -11,9 +11,9 @@
 
 class ListFactory : public Factory{
 public:
-    List* loadList(std::string& listName);
-    List* createList( User* user,std::string& listName);
-    ListUpdate* createListUpdate(std::string &listName, std::string &itemName, int quantity);
+    List* loadList(const std::string& listName);
+    List* createList( User* user,const std::string& listName);
+    ListUpdate* createListUpdate(const std::string &listName, const std::string &itemName, int quantity);
     ~ListFactory() override;
 private:
     const std::string path = "../Files/";

@@ -20,7 +20,7 @@ public:
     bool isEmpty(std::ifstream& file);
 protected:
     std::ifstream* openFile(const std::string& path);
-    virtual std::string findProduct(std::string& name);
+    virtual std::string findProduct(const std::string& name);
     const std::string path;
 };
 

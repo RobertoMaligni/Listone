@@ -16,7 +16,7 @@ std::ifstream* Factory::openFile(const std::string& path) {
     return file;
 }
 
-std::string Factory::findProduct(std::string &name) {
+std::string Factory::findProduct(const std::string &name) {
     std::ifstream* file = this->openFile(path);
     std::string line;
     bool found = false;

@@ -10,7 +10,7 @@
 
 class Observer {
 public:
-    virtual void update(std::string&  listName, std::string& itemName,int quantity) = 0;
+    virtual void update(const std::string&  listName, const std::string& itemName,int quantity) = 0;
     virtual ~Observer() = default;
 };
 

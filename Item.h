@@ -10,7 +10,7 @@
 
 class Item {
 public:
-    Item(std::string& name, std::string&  category,int quantity = 0);
+    Item(const std::string& name, const std::string&  category,int quantity = 0);
     ~Item() = default;
 
     bool operator==(const Item &rhs) const;

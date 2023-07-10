@@ -9,7 +9,7 @@
 #include "../Exceptions/IncorrectPassword.h"
 
 //get user from file
-User *UserFactory::loadUser(std::string& userName, std::string& password){
+User *UserFactory::loadUser(const std::string& userName, const std::string& password){
     std::string line;
     try{
         line = this->findProduct(userName);
@@ -69,7 +69,7 @@ User *UserFactory::loadUser(int userID) {
 }
 
 //create new user runtime
-User *UserFactory::createUser(std::string &userName, std::string &password){
+User *UserFactory::createUser(const std::string &userName, const std::string &password){
     try{
         //if it does not throw means user already exist
         std::string line = this->findProduct(userName);

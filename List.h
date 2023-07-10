@@ -18,10 +18,10 @@
 class List : public Observer{
 public:
     List(const std::list<int> &ownerIDs, const std::string &listName, const std::list<Item *> &items);
-    List(User* user, std::string& name);
+    List(User* user, const std::string& name);
     ~List() override;
 
-    void update(std::string& listName,std::string &itemName, int quantity) override;
+    void update(const std::string& listName,const std::string &itemName, int quantity) override;
     const std::string &getName() const;
     const std::list<Item *> &getItems() const;
 

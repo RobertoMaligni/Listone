@@ -35,7 +35,7 @@ Listone::Listone() {
 bool Listone::isRunning() const {
     return running;
 }
-void Listone::loginUser(std::string &userName, std::string& password) {
+void Listone::loginUser(const std::string &userName,const std::string& password) {
     UserFactory factory;
     try {
         user = factory.loadUser(userName, password);
@@ -45,7 +45,7 @@ void Listone::loginUser(std::string &userName, std::string& password) {
     }
 }
 
-void Listone::registerUser(std::string &userName, std::string &password){
+void Listone::registerUser(const std::string &userName,const std::string &password){
     UserFactory factory;
     try {
         user = factory.loadUser(userName, password);
@@ -60,20 +60,20 @@ void Listone::logOut() {
     std::cout << "Log out successful " << std::endl;
 }
 
-void Listone::createList(std::string &name) const {
+void Listone::createList(const std::string &name) const {
     if(!this->isLoggedIn()) {
         throw UserNotLoggedIn();
     }
     user->createList(name);
 }
 
-void Listone::addNonOwnedList(std::string& listName) {
+void Listone::addNonOwnedList(const std::string& listName) {
     ListFactory factory;
     List* list = factory.loadList(listName);
     user->registerObserver(list);
 }
 
-void Listone::updateList(std::string &listName, std::string &itemName, int quantity) {
+void Listone::updateList(const std::string &listName, const std::string &itemName, int quantity) {
     if(!this->isLoggedIn()){
         throw UserNotLoggedIn();
     }

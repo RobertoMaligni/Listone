@@ -9,8 +9,8 @@
 #include <utility>
 
 
-User::User(int userId, std::string userName, std::string password) : userID(userId), userName(std::move(userName)),
-                                                                     password(std::move(password)) {
+User::User(int userId, const std::string userName, const std::string password) : userID(userId), userName(userName),
+                                                                     password(password) {
     this->loadUserLists();
 }
 
@@ -28,7 +28,7 @@ void User::removeObserver(Observer *o) {
     lists.remove(o);
 }
 
-void User::listUpdate( std::string& listName, std::string &itemName, int quantity) {
+void User::listUpdate( const std::string& listName, const std::string &itemName, int quantity) {
     ListFactory factory;
     buffer.push_back(factory.createListUpdate(listName, itemName, quantity));
 }
@@ -56,7 +56,7 @@ void User::loadUserLists() {
     //TODO
 }
 
-void User::createList(std::string &listName) {
+void User::createList(const std::string &listName) {
     ListFactory factory;
     List* list;
     try {

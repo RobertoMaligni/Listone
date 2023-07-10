@@ -10,7 +10,7 @@
 
 class ItemFactory : public Factory{
 public:
-    Item* createItem(std::string& name);
+    Item* createItem(const std::string& name);
     ~ItemFactory() override;
 private:
     const std::string path = "../Files/Inventory.txt";

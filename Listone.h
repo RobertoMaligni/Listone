@@ -15,12 +15,12 @@ class Listone {
 public:
     static Listone* getInstance();
     bool isRunning() const;
-    void loginUser(std::string& userName, std::string& password);
-    void registerUser(std::string& userName, std::string& password);
+    void loginUser(const std::string& userName,const std::string& password);
+    void registerUser(const std::string& userName,const std::string& password);
     void logOut();
-    void createList(std::string& name) const;
-    void addNonOwnedList(std::string& listName);
-    void updateList(std::string &listName,std::string& itemName, int quantity);
+    void createList(const std::string& name) const;
+    void addNonOwnedList(const std::string& listName);
+    void updateList(const std::string &listName,const std::string& itemName, int quantity);
 
 private:
     bool isLoggedIn() const;

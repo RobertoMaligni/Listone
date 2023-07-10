@@ -13,14 +13,14 @@
 
 class User : public Subject {
 public:
-    User(int userId, std::string userName, std::string password);
+    User(int userId, const std::string userName, const std::string password);
     ~User() override;
 
     void registerObserver(Observer *o) override;
     void removeObserver(Observer *o) override;
     void notifyObservers() const override;
-    void createList(std::string& listName);
-    void listUpdate( std::string& listName, std::string& itemName, int quantity);
+    void createList(const std::string& listName);
+    void listUpdate( const std::string& listName, const std::string& itemName, int quantity);
     void saveLists();
     int getUserId() const;
     std::string toString() const;

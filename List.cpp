@@ -7,7 +7,7 @@
 
 #include <utility>
 
-List::List( User* user, std::string &name) : listName(name){
+List::List( User* user, const std::string &name) : listName(name){
     if(user == nullptr){
         throw std::runtime_error("User not passed");
     }
@@ -24,7 +24,7 @@ List::~List() {
     }
 }
 
-void List::update( std::string& listName, std::string &itemName, int quantity) {
+void List::update( const std::string& listName, const std::string &itemName, int quantity) {
     if (quantity < 0)
         throw std::runtime_error("Quantity in Item cannot be < 0");
     if(this->listName == listName) {

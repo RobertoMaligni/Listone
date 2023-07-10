@@ -16,33 +16,12 @@
  *
  * */
 
-void experiment(){
-    std::string line;
-    std::ifstream file("../Files/Users.txt");
-    if(!file.is_open()){
-        throw std::exception();
-    }
-    bool found = false;
-    while(std::getline(file,line) && !found){
-        std::replace(line.begin(), line.end(), ';', ' ');  // replace ':' by ' '
-        std::stringstream ss(line);
-        std::string token;
-        while (ss >> token && !found){
-            if(token == "FrancescoTotti")
-                found = true;
-        }
-    }
-    if(!found) {
-        throw std::exception();
-    }
-}
-
 
 int main() {
-    std::cout << std::to_string(false) << std::endl;
-    /*
+
     Listone* listone = Listone::getInstance();
-    listone->loginUser("FrancescoTotti","password");
-    */
+    std::string user("FrancescoTotti");
+    std::string password = "password";
+    //listone->loginUser(std::string("FrancescoTotti"),"password");
     return 0;
 }
