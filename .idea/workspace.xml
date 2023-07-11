@@ -11,7 +11,9 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
+      <config projectName="Listone" targetName="runListoneTests.cpp" />
       <config projectName="Listone" targetName="Listone" />
+      <config projectName="Listone" targetName="core" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -20,28 +22,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Finished all TODOs">
+    <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Started unit testing with framework Gtest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/Factory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/Factory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/Factory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/Factory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/ItemFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/ItemFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/ItemFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/ItemFactory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/ListFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/ListFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/ListFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/ListFactory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/UserFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/UserFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/UserFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/UserFactory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Item.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Item.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Item.h" beforeDir="false" afterPath="$PROJECT_DIR$/Item.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/List.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ListUpdate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ListUpdate.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ListUpdate.h" beforeDir="false" afterPath="$PROJECT_DIR$/ListUpdate.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Listone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Listone.h" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Observer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Observer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/User.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/User.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/runListoneTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/runListoneTests.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,18 +71,20 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/samuele/Desktop/Listone&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/samuele/Desktop/unit_testing&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -107,12 +92,28 @@
       <recent name="$PROJECT_DIR$/Files" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Google Test.runListoneTests.cpp">
+    <configuration name="runListoneTests.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="runListoneTests.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="runListoneTests.cpp" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Listone" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="Listone" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="Listone">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="core" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="core" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.core" />
+      <item itemvalue="CMake Application.Listone" />
+      <item itemvalue="Google Test.runListoneTests.cpp" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -136,7 +137,10 @@
       <workItem from="1688735105598" duration="11303000" />
       <workItem from="1688820124755" duration="1044000" />
       <workItem from="1688831964651" duration="4468000" />
-      <workItem from="1688995122221" duration="662000" />
+      <workItem from="1688995122221" duration="5691000" />
+      <workItem from="1689080867569" duration="1000" />
+      <workItem from="1689088880896" duration="165000" />
+      <workItem from="1689089069680" duration="1110000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -226,7 +230,23 @@
       <option name="project" value="LOCAL" />
       <updated>1688837657277</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fixed const correctness of strings">
+      <option name="closed" value="true" />
+      <created>1688995836209</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1688995836209</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Started unit testing with framework Gtest">
+      <option name="closed" value="true" />
+      <created>1689004567614</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1689004567614</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +282,12 @@
     <MESSAGE value="Implemented UserFactory methods" />
     <MESSAGE value="Implemented ListFactory methods" />
     <MESSAGE value="Finished all TODOs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished all TODOs" />
+    <MESSAGE value="Fixed const correctness of strings" />
+    <MESSAGE value="Started unit testing with framework Gtest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started unit testing with framework Gtest" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
