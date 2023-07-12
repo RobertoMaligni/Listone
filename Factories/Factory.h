@@ -20,7 +20,8 @@ public:
     bool isEmpty(std::ifstream& file);
 protected:
     std::ifstream* openFile(const std::string& path);
-    virtual std::string findProduct(const std::string& name);
+    std::string findProduct(const std::string& name);
+    bool parameterExist(int pos, const std::string &string);
     const std::string path;
 };
 

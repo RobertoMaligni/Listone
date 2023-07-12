@@ -10,12 +10,11 @@
 
 //get user from file
 User *UserFactory::loadUser(const std::string& userName, const std::string& password){
-    std::string line;
-    try{
-        line = this->findProduct(userName);
-    }catch(GenericFileError& e){
+    if(userName.empty() || password.empty())
+        throw std::runtime_error("Parameters cannot be empty");
+    if(!this->userExist(userName))
         throw UserNotFound(userName);
-    }
+    std::string line = this->findProduct(userName);
     std::stringstream ss(line);
     std::string token;
     int userID;
@@ -70,6 +69,8 @@ User *UserFactory::loadUser(int userID) {
 
 //create new user runtime
 User *UserFactory::createUser(const std::string &userName, const std::string &password){
+    if(userName.empty() || password.empty())
+        throw std::runtime_error("Parameters cannot be empty");
     try{
         //if it does not throw means user already exist
         std::string line = this->findProduct(userName);
@@ -88,13 +89,18 @@ int UserFactory::getLastUserID() {
     if(this->isEmpty(*file)){ //No user registered
         return 0;
     }
-    bool found = false;
     while(std::getline(*file,line)){}
     std::replace(line.begin(), line.end(), ';', ' ');  // replace ';' by ' '
     std::stringstream ss(line);
     std::string token;
     ss >> token; //ID
     return std::stoi(token);
+}
+
+bool UserFactory::userExist(const std::string &userName) {
+    if(userName.empty())
+        throw std::runtime_error("Parameters cannot be empty");
+    return this->parameterExist(2,userName);;
 }
 
 

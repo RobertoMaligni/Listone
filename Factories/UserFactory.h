@@ -14,6 +14,7 @@ public:
     User* loadUser(const std::string& userName, const std::string& password);
     User* loadUser(int userID);
     User* createUser(const std::string& userName, const std::string& password);
+    bool userExist(const std::string& userName);
 private:
     int getLastUserID();
     const std::string path = "../Files/Users.txt";

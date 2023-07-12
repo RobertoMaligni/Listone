@@ -36,23 +36,21 @@ bool Listone::isRunning() const {
     return running;
 }
 void Listone::loginUser(const std::string &userName,const std::string& password) {
+    if(userName.empty() || password.empty())
+        throw std::runtime_error("Parameters cannot be empty");
     UserFactory factory;
-    try {
-        user = factory.loadUser(userName, password);
-        std::cout << "Welcome back " << userName << " <3" << std::endl;
-    }catch(UserNotFound& e){
-        std::cout << e.what() << std::endl;
-    }
+    if(!factory.userExist(userName))
+        throw UserNotFound(userName);
+    user = factory.loadUser(userName, password);
+    std::cout << "Welcome back " << userName << " <3" << std::endl;
 }
 
 void Listone::registerUser(const std::string &userName,const std::string &password){
     UserFactory factory;
-    try {
-        user = factory.loadUser(userName, password);
-    }catch(UserNotFound& e){
-        user = factory.loadUser(userName, password);
-        std::cout << "Welcome " << userName << " <3" << std::endl;
-    }
+    if(factory.userExist(userName))
+        throw std::runtime_error("User already exists.");
+    user = factory.createUser(userName, password);
+    std::cout << "Welcome " << userName << " <3" << std::endl;
 }
 
 void Listone::logOut() {
