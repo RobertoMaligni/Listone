@@ -3,8 +3,7 @@
 //
 
 #include "User.h"
-#include "Factories/ListHandler.h"
-
+#include "FileHandlers/ListHandler.h"
 #include <utility>
 
 
@@ -42,12 +41,16 @@ void User::createList(const std::string &listName) {
     List* list;
     try {
         list = factory.loadList(listName);
-    }catch(ListNotFound& e){
+    }catch(ItemNotFound& e){
         list = factory.createList(this,listName);
     }
     lists.push_back(list);
 }
 
 void User::saveLists() {
+    //TODO
+}
+
+void User::update(const std::string &listName, const std::string &itemName, int quantity) {
     //TODO
 }

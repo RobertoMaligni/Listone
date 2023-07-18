@@ -9,13 +9,13 @@
 #include <string>
 #include <list>
 #include "Subject.h"
-#include "ListUpdate.h"
 
 class User : public Observer {
 public:
     User(int userId, const std::string userName, const std::string password);
     ~User() override;
 
+    void update(const std::string&  listName, const std::string& itemName,int quantity) override;
     void createList(const std::string& listName);
     void listUpdate( const std::string& listName, const std::string& itemName, int quantity);
     void saveLists();
@@ -28,8 +28,6 @@ private:
     int userID;
     std::string userName;
     std::string password;
-    std::list<ListUpdate*> buffer;
-    std::list<Observer*> lists;
 };
 
 

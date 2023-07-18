@@ -40,7 +40,7 @@ void Listone::loginUser(const std::string &userName,const std::string& password)
         throw std::runtime_error("Parameters cannot be empty");
     UserHandler factory;
     if(!factory.userExist(userName))
-        throw UserNotFound(userName);
+        throw ItemNotFound(userName);
     user = factory.loadUser(userName, password);
     std::cout << "Welcome back " << userName << " <3" << std::endl;
 }
