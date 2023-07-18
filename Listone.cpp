@@ -3,7 +3,7 @@
 //
 
 #include "Listone.h"
-#include "Factories/ListFactory.h"
+#include "FileHandlers/ListHandler.h"
 
 //singleton stuff
 Listone* Listone::instance = nullptr;
@@ -38,7 +38,7 @@ bool Listone::isRunning() const {
 void Listone::loginUser(const std::string &userName,const std::string& password) {
     if(userName.empty() || password.empty())
         throw std::runtime_error("Parameters cannot be empty");
-    UserFactory factory;
+    UserHandler factory;
     if(!factory.userExist(userName))
         throw UserNotFound(userName);
     user = factory.loadUser(userName, password);
@@ -46,7 +46,7 @@ void Listone::loginUser(const std::string &userName,const std::string& password)
 }
 
 void Listone::registerUser(const std::string &userName,const std::string &password){
-    UserFactory factory;
+    UserHandler factory;
     if(factory.userExist(userName))
         throw std::runtime_error("User already exists.");
     user = factory.createUser(userName, password);
@@ -66,7 +66,7 @@ void Listone::createList(const std::string &name) const {
 }
 
 void Listone::addNonOwnedList(const std::string& listName) {
-    ListFactory factory;
+    ListHandler factory;
     List* list = factory.loadList(listName);
     user->registerObserver(list);
 }

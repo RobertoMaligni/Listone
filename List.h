@@ -11,11 +11,11 @@
 #include "Item.h"
 #include "Observer.h"
 #include "Subject.h"
-#include "Factories/ItemFactory.h"
+#include "FileHandlers/InventoryHandler.h"
 #include "User.h"
 
 
-class List : public Observer{
+class List : public Subject{
 public:
     List(const std::list<int> &ownerIDs, const std::string &listName, const std::list<Item *> &items);
     List(User* user, const std::string& name);
@@ -23,7 +23,7 @@ public:
 
     void update(const std::string& listName,const std::string &itemName, int quantity) override;
     const std::string &getName() const;
-    const std::list<Item *> &getItems() const;
+
 
 
 private:

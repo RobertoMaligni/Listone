@@ -33,8 +33,8 @@ void List::update( const std::string& listName, const std::string &itemName, int
             item = findItem(itemName);
             item->setQuantity(quantity);
         } catch (GenericFileError& e) {
-            ItemFactory factory;
-            item = factory.createItem(itemName);
+            InventoryHandler factory;
+            item = factory.loadItem(itemName);
             item->setQuantity(quantity);
             items.push_back(item);
         }

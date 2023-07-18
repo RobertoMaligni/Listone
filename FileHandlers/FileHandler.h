@@ -2,8 +2,8 @@
 // Created by samuele on 02/07/23.
 //
 
-#ifndef LISTONE_FACTORY_H
-#define LISTONE_FACTORY_H
+#ifndef LISTONE_FILEHANDLER_H
+#define LISTONE_FILEHANDLER_H
 
 
 #include <string>
@@ -13,10 +13,10 @@
 #include <algorithm>
 #include "../Exceptions/ItemNotFound.h"
 
-class Factory {
+class FileHandler {
 public:
     virtual void printFactory();
-    virtual ~Factory() = 0;
+    virtual ~FileHandler() = 0;
     bool isEmpty(std::ifstream& file);
 protected:
     std::ifstream* openFile(const std::string& path);
@@ -25,4 +25,4 @@ protected:
     const std::string path;
 };
 
-#endif //LISTONE_FACTORY_H
+#endif //LISTONE_FILEHANDLER_H

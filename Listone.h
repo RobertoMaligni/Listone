@@ -7,8 +7,7 @@
 
 #include <string>
 #include "User.h"
-#include "Factories/UserFactory.h"
-#include "Exceptions/UserNotFound.h"
+#include "FileHandlers/UserHandler.h"
 #include "Exceptions/UserNotLoggedIn.h"
 
 class Listone {

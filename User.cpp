@@ -3,8 +3,7 @@
 //
 
 #include "User.h"
-#include "Factories/ListFactory.h"
-#include "Exceptions/ListNotFound.h"
+#include "Factories/ListHandler.h"
 
 #include <utility>
 
@@ -20,27 +19,9 @@ User::~User() {
     }
 }
 
-void User::registerObserver(Observer *o) {
-    lists.push_back(o);
-}
-
-void User::removeObserver(Observer *o) {
-    lists.remove(o);
-}
-
 void User::listUpdate( const std::string& listName, const std::string &itemName, int quantity) {
-    ListFactory factory;
+    ListHandler factory;
     buffer.push_back(factory.createListUpdate(listName, itemName, quantity));
-}
-
-void User::notifyObservers() const{
-    for(auto update : buffer) {
-        for (auto itr : lists) {
-            itr->update(const_cast<std::string &>(update->getListName()),
-                        const_cast<std::string &>(update->getItemName()), update->getQuantity());
-        }
-        delete update;
-    }
 }
 
 int User::getUserId() const {
@@ -52,12 +33,12 @@ std::string User::toString() const{
 }
 
 void User::loadUserLists() {
-    ListFactory factory;
+    ListHandler factory;
     //TODO
 }
 
 void User::createList(const std::string &listName) {
-    ListFactory factory;
+    ListHandler factory;
     List* list;
     try {
         list = factory.loadList(listName);

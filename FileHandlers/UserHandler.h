@@ -2,14 +2,14 @@
 // Created by samuele on 03/07/23.
 //
 
-#ifndef LISTONE_USERFACTORY_H
-#define LISTONE_USERFACTORY_H
+#ifndef LISTONE_USERHANDLER_H
+#define LISTONE_USERHANDLER_H
 
 
-#include "Factory.h"
+#include "FileHandler.h"
 #include "../User.h"
 
-class UserFactory : public Factory{
+class UserHandler : public FileHandler{
 public:
     User* loadUser(const std::string& userName, const std::string& password);
     User* loadUser(int userID);
@@ -21,4 +21,4 @@ private:
 };
 
 
-#endif //LISTONE_USERFACTORY_H
+#endif //LISTONE_USERHANDLER_H

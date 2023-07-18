@@ -1,14 +1,14 @@
 //
 // Created by samuele on 02/07/23.
 //
-#include "Factory.h"
+#include "FileHandler.h"
 #include "../Exceptions/GenericFileError.h"
 
-void Factory::printFactory() {
+void FileHandler::printFactory() {
     //TODO
 }
 
-std::ifstream* Factory::openFile(const std::string& path) {
+std::ifstream* FileHandler::openFile(const std::string& path) {
     if(path.empty())
         throw std::runtime_error("Parameters cannot be empty");
     auto file = new std::ifstream(path.c_str());
@@ -18,7 +18,7 @@ std::ifstream* Factory::openFile(const std::string& path) {
     return file;
 }
 
-std::string Factory::findProduct(const std::string &name) {
+std::string FileHandler::findProduct(const std::string &name) {
     if(name.empty())
         throw std::runtime_error("Parameters cannot be empty");
     std::ifstream* file = this->openFile(path);
@@ -40,7 +40,7 @@ std::string Factory::findProduct(const std::string &name) {
     return line;
 }
 
-bool Factory::parameterExist(int pos, const std::string &string) {
+bool FileHandler::parameterExist(int pos, const std::string &string) {
     if(string.empty())
         throw std::runtime_error("Parameters cannot be empty");
     std::string line;
@@ -62,9 +62,9 @@ bool Factory::parameterExist(int pos, const std::string &string) {
     return found;
 }
 
-bool Factory::isEmpty(std::ifstream& file){
+bool FileHandler::isEmpty(std::ifstream& file){
     return file.peek() == std::ifstream::traits_type::eof();
 }
 
-Factory::~Factory() {}
+FileHandler::~FileHandler() {}
 

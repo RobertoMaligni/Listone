@@ -3,17 +3,16 @@
 //
 
 #include <ctime>
-#include "UserFactory.h"
-#include "../Exceptions/UserNotFound.h"
+#include "UserHandler.h"
 #include "../Exceptions/GenericFileError.h"
 #include "../Exceptions/IncorrectPassword.h"
 
 //get user from file
-User *UserFactory::loadUser(const std::string& userName, const std::string& password){
+User *UserHandler::loadUser(const std::string& userName, const std::string& password){
     if(userName.empty() || password.empty())
         throw std::runtime_error("Parameters cannot be empty");
     if(!this->userExist(userName))
-        throw UserNotFound(userName);
+        throw ItemNotFound(userName);
     std::string line = this->findProduct(userName);
     std::stringstream ss(line);
     std::string token;
@@ -38,13 +37,13 @@ User *UserFactory::loadUser(const std::string& userName, const std::string& pass
     return new User(userID,userName,password);
 }
 
-User *UserFactory::loadUser(int userID) {
+User *UserHandler::loadUser(int userID) {
     //TODO
     std::string line = std::to_string(userID);
     try{
         line = this->findProduct(line);
     }catch(GenericFileError& e){
-        throw UserNotFound(std::to_string(userID));
+        throw ItemNotFound(std::to_string(userID));
     }
     std::stringstream ss(line);
     std::string token, userName,password;
@@ -68,7 +67,7 @@ User *UserFactory::loadUser(int userID) {
 }
 
 //create new user runtime
-User *UserFactory::createUser(const std::string &userName, const std::string &password){
+User *UserHandler::createUser(const std::string &userName, const std::string &password){
     if(userName.empty() || password.empty())
         throw std::runtime_error("Parameters cannot be empty");
     try{
@@ -83,7 +82,7 @@ User *UserFactory::createUser(const std::string &userName, const std::string &pa
     }
 }
 
-int UserFactory::getLastUserID() {
+int UserHandler::getLastUserID() {
     std::string line;
     std::ifstream* file = this->openFile(path);
     if(this->isEmpty(*file)){ //No user registered
@@ -97,7 +96,7 @@ int UserFactory::getLastUserID() {
     return std::stoi(token);
 }
 
-bool UserFactory::userExist(const std::string &userName) {
+bool UserHandler::userExist(const std::string &userName) {
     if(userName.empty())
         throw std::runtime_error("Parameters cannot be empty");
     return this->parameterExist(2,userName);;

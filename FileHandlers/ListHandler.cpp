@@ -2,13 +2,13 @@
 // Created by samuele on 05/07/23.
 //
 
-#include "ListFactory.h"
-#include "UserFactory.h"
+#include "ListHandler.h"
+#include "UserHandler.h"
 #include "../Exceptions/GenericFileError.h"
 
-ListFactory::~ListFactory() {}
+ListHandler::~ListHandler() {}
 
-List *ListFactory::loadList(const std::string &listName) {
+List *ListHandler::loadList(const std::string &listName) {
     std::ifstream* file = this->openFile(path + listName + ".txt");
 
     //load userIDs
@@ -28,12 +28,12 @@ List *ListFactory::loadList(const std::string &listName) {
         std::replace(line.begin(), line.end(), ';', ' ');  // replace ';' by ' '
         ss = std::stringstream(line);
         int i = 0;
-        ItemFactory factory;
+        InventoryHandler factory;
         Item* item;
         while (ss >> token){
             switch(i){
                 case 0:
-                    item = factory.createItem(token);
+                    item = factory.loadItem(token);
                     delete &factory;
                     break;
                 case 1:
@@ -59,7 +59,7 @@ List *ListFactory::loadList(const std::string &listName) {
     return new List(userIDs,listName,items);
 }
 
-List *ListFactory::createList(User *user, const std::string &listName) {
+List *ListHandler::createList(User *user, const std::string &listName) {
     try {
         delete this->openFile(path + listName + ".txt"); //list exists?
         throw std::runtime_error("'" + listName + "' already exists");
@@ -69,11 +69,11 @@ List *ListFactory::createList(User *user, const std::string &listName) {
     }
 }
 
-ListUpdate *ListFactory::createListUpdate(const std::string &listName, const std::string &itemName, int quantity) {
+ListUpdate *ListHandler::createListUpdate(const std::string &listName, const std::string &itemName, int quantity) {
     if(quantity < 0)
         throw std::runtime_error("");
     delete this->openFile(path + listName + ".txt"); //list exists?
-    ItemFactory factory;
-    delete factory.createItem(itemName); //item exist?
+    InventoryHandler factory;
+    delete factory.loadItem(itemName); //item exist?
     return new ListUpdate(listName,itemName,quantity);
 }

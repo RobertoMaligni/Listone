@@ -2,9 +2,9 @@
 // Created by samuele on 01/07/23.
 //
 
-#include "ItemFactory.h"
+#include "InventoryHandler.h"
 
-Item* ItemFactory::createItem(const std::string &name) {
+Item* InventoryHandler::loadItem(const std::string &name) {
     std::string line = findProduct(name); //fine if propagate since the main has to handle this exception
 
     size_t pos = 0;
@@ -18,6 +18,6 @@ Item* ItemFactory::createItem(const std::string &name) {
     return new Item(name,token);
 }
 
-ItemFactory::~ItemFactory() {}
+InventoryHandler::~InventoryHandler() {}
 
 

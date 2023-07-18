@@ -11,14 +11,11 @@
 #include "Subject.h"
 #include "ListUpdate.h"
 
-class User : public Subject {
+class User : public Observer {
 public:
     User(int userId, const std::string userName, const std::string password);
     ~User() override;
 
-    void registerObserver(Observer *o) override;
-    void removeObserver(Observer *o) override;
-    void notifyObservers() const override;
     void createList(const std::string& listName);
     void listUpdate( const std::string& listName, const std::string& itemName, int quantity);
     void saveLists();

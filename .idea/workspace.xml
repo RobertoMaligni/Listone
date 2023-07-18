@@ -24,12 +24,27 @@
   <component name="ChangeListManager">
     <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Started unit testing with framework Gtest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/Factory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/Factory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/Factory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/Factory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/UserFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/UserFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/UserFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Factories/UserFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exceptions/ListNotFound.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exceptions/ListNotFound.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exceptions/UserNotFound.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exceptions/UserNotFound.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/Factory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/FileHandler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/Factory.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/FileHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/ItemFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/InventoryHandler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/ItemFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/InventoryHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/ListFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/ListHandler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/ListFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/ListHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/UserFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/UserHandler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factories/UserFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/UserHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/List.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ListUpdate.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ListUpdate.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Listone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/runListoneTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/runListoneTests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listone.h" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/User.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/User.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,13 +113,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Google Test.ListoneTest.LoginUser">
-    <configuration name="ListoneTest.LoginUser" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="runListoneTests.cpp" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="runListoneTests.cpp" TEST_CLASS="ListoneTest" TEST_METHOD="LoginUser" TEST_MODE="SUITE_TEST">
+    <configuration name="ListoneTest.LoginUser" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="runListoneTests.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="runListoneTests.cpp" TEST_CLASS="ListoneTest" TEST_METHOD="LoginUser" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Listone.LoginUser" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="runListoneTests.cpp" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="runListoneTests.cpp" TEST_CLASS="Listone" TEST_METHOD="LoginUser" TEST_MODE="SUITE_TEST">
+    <configuration name="Listone.LoginUser" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="runListoneTests.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="runListoneTests.cpp" TEST_CLASS="Listone" TEST_METHOD="LoginUser" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -117,6 +132,11 @@
       </method>
     </configuration>
     <configuration name="Listone" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="Listone" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="Listone">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -169,6 +189,10 @@
       <workItem from="1689170873970" duration="316000" />
       <workItem from="1689172066280" duration="330000" />
       <workItem from="1689172656045" duration="6603000" />
+      <workItem from="1689614605645" duration="1000" />
+      <workItem from="1689685245160" duration="335000" />
+      <workItem from="1689690893508" duration="116000" />
+      <workItem from="1689691045674" duration="5016000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
