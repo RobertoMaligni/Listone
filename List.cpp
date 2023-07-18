@@ -11,33 +11,13 @@ List::List( User* user, const std::string &name) : listName(name){
     if(user == nullptr){
         throw std::runtime_error("User not passed");
     }
-    user->registerObserver(this);
-    ownerIDs.push_back(user->getUserId());
 }
 
-List::List(const std::list<int> &ownerIDs, const std::string &listName, const std::list<Item *> &items) : ownerIDs(
-        ownerIDs), listName(listName), items(items) {}
+List::List(const std::string &listName, const std::list<Item *> &items) : listName(listName), items(items) {}
 
 List::~List() {
     for(auto& it : items){
         delete it;
-    }
-}
-
-void List::update( const std::string& listName, const std::string &itemName, int quantity) {
-    if (quantity < 0)
-        throw std::runtime_error("Quantity in Item cannot be < 0");
-    if(this->listName == listName) {
-        Item *item;
-        try {
-            item = findItem(itemName);
-            item->setQuantity(quantity);
-        } catch (GenericFileError& e) {
-            InventoryHandler factory;
-            item = factory.loadItem(itemName);
-            item->setQuantity(quantity);
-            items.push_back(item);
-        }
     }
 }
 
@@ -82,5 +62,10 @@ void List::notifyObservers() const {
 const std::list<Item> List::getUnCheckedItems() const {
     //TODO
     return std::list<Item>();
+}
+
+const std::string &List::toString() const{
+    //TODO
+    return " ";
 }
 

@@ -8,6 +8,7 @@
 #include <list>
 #include <algorithm>
 #include <array>
+#include <memory>
 #include "Item.h"
 #include "Observer.h"
 #include "Subject.h"
@@ -17,7 +18,7 @@
 
 class List : public Subject{
 public:
-    List(const std::list<int> &ownerIDs, const std::string &listName, const std::list<Item *> &items);
+    List(const std::string &listName, const std::list<Item *> &items);
     List(User* user, const std::string& name);
     ~List() override;
 
@@ -26,15 +27,16 @@ public:
     void notifyObservers() const override;
 
     const std::string &getName() const;
-    const std::list<Item> getUnCheckedItems() const;
+    const std::list<std::weak_ptr<Item>> getUnCheckedItems() const;
 
 
 private:
     Item* findItem(const Item& item) const;
     Item* findItem(const std::string& itemName) const;
+    const std::string& toString() const;
 
     std::string listName;
-    std::list<Item*> items;
+    std::list<std::shared_ptr<Item>> items;
     std::list<Observer*> users;
 };
 
