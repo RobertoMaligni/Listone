@@ -67,7 +67,20 @@ const std::string &List::getName() const {
     return listName;
 }
 
-const std::list<Item *> &List::getItems() const {
-    return items;
+void List::registerObserver(Observer *o) {
+//TODO
+}
+
+void List::removeObserver(Observer *o) {
+//TODO
+}
+
+void List::notifyObservers() const {
+//TODO
+}
+
+const std::list<Item> List::getUnCheckedItems() const {
+    //TODO
+    return std::list<Item>();
 }
 

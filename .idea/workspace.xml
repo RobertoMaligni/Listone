@@ -22,29 +22,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Started unit testing with framework Gtest">
+    <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Major restructuring of the program.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exceptions/ListNotFound.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exceptions/ListNotFound.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exceptions/UserNotFound.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exceptions/UserNotFound.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/Factory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/FileHandler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/Factory.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/FileHandler.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/ItemFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/InventoryHandler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/ItemFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/InventoryHandler.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/ListFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/ListHandler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/ListFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/ListHandler.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/UserFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/UserHandler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factories/UserFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/UserHandler.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/List.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ListUpdate.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ListUpdate.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Listone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Listone.h" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/User.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/User.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +174,7 @@
       <workItem from="1689614605645" duration="1000" />
       <workItem from="1689685245160" duration="335000" />
       <workItem from="1689690893508" duration="116000" />
-      <workItem from="1689691045674" duration="5016000" />
+      <workItem from="1689691045674" duration="5768000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -298,7 +280,23 @@
       <option name="project" value="LOCAL" />
       <updated>1689004567614</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Major restructuring of the program.">
+      <option name="closed" value="true" />
+      <created>1689698611980</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1689698611980</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Major restructuring of the program.">
+      <option name="closed" value="true" />
+      <created>1689699000236</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1689699000236</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +334,8 @@
     <MESSAGE value="Finished all TODOs" />
     <MESSAGE value="Fixed const correctness of strings" />
     <MESSAGE value="Started unit testing with framework Gtest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started unit testing with framework Gtest" />
+    <MESSAGE value="Major restructuring of the program." />
+    <option name="LAST_COMMIT_MESSAGE" value="Major restructuring of the program." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

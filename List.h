@@ -21,18 +21,21 @@ public:
     List(User* user, const std::string& name);
     ~List() override;
 
-    void update(const std::string& listName,const std::string &itemName, int quantity) override;
-    const std::string &getName() const;
+    void registerObserver(Observer *o) override;
+    void removeObserver(Observer *o) override;
+    void notifyObservers() const override;
 
+    const std::string &getName() const;
+    const std::list<Item> getUnCheckedItems() const;
 
 
 private:
     Item* findItem(const Item& item) const;
     Item* findItem(const std::string& itemName) const;
 
-    std::list<int> ownerIDs;
     std::string listName;
     std::list<Item*> items;
+    std::list<Observer*> users;
 };
 
 

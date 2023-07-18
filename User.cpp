@@ -44,7 +44,7 @@ void User::createList(const std::string &listName) {
     }catch(ItemNotFound& e){
         list = factory.createList(this,listName);
     }
-    lists.push_back(list);
+    list->registerObserver(this);
 }
 
 void User::saveLists() {
