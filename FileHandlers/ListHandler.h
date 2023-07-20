@@ -13,7 +13,6 @@ class ListHandler : public FileHandler{
 public:
     List* loadList(const std::string& listName);
     List* createList( User* user,const std::string& listName);
-    ListUpdate* createListUpdate(const std::string &listName, const std::string &itemName, int quantity);
     ~ListHandler() override;
 private:
     const std::string path = "../Files/";

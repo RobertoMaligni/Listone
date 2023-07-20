@@ -16,7 +16,7 @@ public:
     bool operator==(const Item &rhs) const;
     bool operator!=(const Item &rhs) const;
 
-    bool isTaken() const;
+    bool isChecked() const;
     void checkItem();
     void unCheckItem();
     const std::string &getName() const;

@@ -12,16 +12,8 @@ User::User(int userId, const std::string userName, const std::string password) :
     this->loadUserLists();
 }
 
-User::~User() {
-    for(auto& it : lists){
-        delete it;
-    }
-}
+User::~User() {}
 
-void User::listUpdate( const std::string& listName, const std::string &itemName, int quantity) {
-    ListHandler factory;
-    buffer.push_back(factory.createListUpdate(listName, itemName, quantity));
-}
 
 int User::getUserId() const {
     return userID;
@@ -45,10 +37,6 @@ void User::createList(const std::string &listName) {
         list = factory.createList(this,listName);
     }
     list->registerObserver(this);
-}
-
-void User::saveLists() {
-    //TODO
 }
 
 void User::update(const std::string &listName, const std::string &itemName, int quantity) {

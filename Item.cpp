@@ -23,7 +23,7 @@ void Item::setQuantity(int quantity) {
     Item::quantity = quantity;
 }
 
-bool Item::isTaken() const {
+bool Item::isChecked() const {
     return taken;
 }
 

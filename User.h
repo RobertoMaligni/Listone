@@ -17,8 +17,6 @@ public:
 
     void update(const std::string&  listName, const std::string& itemName,int quantity) override;
     void createList(const std::string& listName);
-    void listUpdate( const std::string& listName, const std::string& itemName, int quantity);
-    void saveLists();
     int getUserId() const;
     std::string toString() const;
 

@@ -65,12 +65,6 @@ void Listone::createList(const std::string &name) const {
     user->createList(name);
 }
 
-void Listone::addNonOwnedList(const std::string& listName) {
-    ListHandler factory;
-    List* list = factory.loadList(listName);
-    user->registerObserver(list);
-}
-
 void Listone::updateList(const std::string &listName, const std::string &itemName, int quantity) {
     if(!this->isLoggedIn()){
         throw UserNotLoggedIn();

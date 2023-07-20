@@ -22,10 +22,10 @@ public:
     void updateList(const std::string &listName,const std::string& itemName, int quantity);
 
 private:
-    bool isLoggedIn() const;
     Listone();
     Listone(const Listone& rs);
     Listone& operator= (const Listone& rs);
+    bool isLoggedIn() const;
 
     User* user;
     bool running;

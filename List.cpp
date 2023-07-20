@@ -13,15 +13,11 @@ List::List( User* user, const std::string &name) : listName(name){
     }
 }
 
-List::List(const std::string &listName, const std::list<Item *> &items) : listName(listName), items(items) {}
+List::List(const std::string &listName, const std::list<std::shared_ptr<Item>> &items) : listName(listName), items(items) {}
 
-List::~List() {
-    for(auto& it : items){
-        delete it;
-    }
-}
+List::~List() {}
 
-Item* List::findItem(const Item &item) const{
+std::weak_ptr<Item> List::findItem(const Item& item) const{
     auto findIter = std::find(items.begin(), items.end(), &item);
     if(findIter == items.end()){
         throw ItemNotFound(item.getName());
@@ -29,7 +25,7 @@ Item* List::findItem(const Item &item) const{
     return *findIter;
 }
 
-Item* List::findItem(const std::string& itemName) const{
+std::weak_ptr<Item> List::findItem(const std::string& itemName) const{
     auto findIter = items.cend();
     for(auto it = items.cbegin(); it != items.cend(); it++){
         if((*it)->getName() == itemName){
@@ -56,16 +52,29 @@ void List::removeObserver(Observer *o) {
 }
 
 void List::notifyObservers() const {
-//TODO
+    for(auto& user : users){
+        user->update();
+    }
 }
 
-const std::list<Item> List::getUnCheckedItems() const {
-    //TODO
-    return std::list<Item>();
+const std::list<std::weak_ptr<Item>> List::getUnCheckedItems() const {
+    std::list<std::weak_ptr<Item>> weakItems;
+    for(const auto& item : items){
+        if(!item->isChecked())
+            weakItems.push_back(item);
+    }
+    return weakItems;
+}
+
+const std::list<std::weak_ptr<Item>> List::getItems() const {
+    std::list<std::weak_ptr<Item>> weakItems;
+    for(const auto& item : items){
+        weakItems.push_back(item);
+    }
+    return weakItems;
 }
 
 const std::string &List::toString() const{
     //TODO
     return " ";
 }
-

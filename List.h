@@ -18,7 +18,7 @@
 
 class List : public Subject{
 public:
-    List(const std::string &listName, const std::list<Item *> &items);
+    List(const std::string &listName, const std::list<std::shared_ptr<Item>> &items);
     List(User* user, const std::string& name);
     ~List() override;
 
@@ -27,12 +27,13 @@ public:
     void notifyObservers() const override;
 
     const std::string &getName() const;
+    const std::list<std::weak_ptr<Item>> getItems() const;
     const std::list<std::weak_ptr<Item>> getUnCheckedItems() const;
 
 
 private:
-    Item* findItem(const Item& item) const;
-    Item* findItem(const std::string& itemName) const;
+    std::weak_ptr<Item> findItem(const Item& item) const;
+    std::weak_ptr<Item> findItem(const std::string& itemName) const;
     const std::string& toString() const;
 
     std::string listName;
