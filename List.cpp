@@ -18,7 +18,8 @@ List::List(const std::string &listName, const std::list<std::shared_ptr<Item>> &
 List::~List() {}
 
 std::weak_ptr<Item> List::findItem(const Item& item) const{
-    auto findIter = std::find(items.begin(), items.end(), &item);
+    //TODO fix
+    auto findIter = items.end();//= std::find(items.begin(), items.end(), &item);
     if(findIter == items.end()){
         throw ItemNotFound(item.getName());
     }
@@ -44,16 +45,16 @@ const std::string &List::getName() const {
 }
 
 void List::registerObserver(Observer *o) {
-//TODO
+    observers.push_back(o);
 }
 
 void List::removeObserver(Observer *o) {
-//TODO
+    observers.remove(o);
 }
 
 void List::notifyObservers() const {
-    for(auto& user : users){
-        user->update();
+    for(auto& user : observers){
+        //user->update();
     }
 }
 
