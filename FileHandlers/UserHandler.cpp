@@ -4,15 +4,14 @@
 
 #include <ctime>
 #include "UserHandler.h"
-#include "../Exceptions/GenericFileError.h"
-#include "../Exceptions/IncorrectPassword.h"
+#include "../Exceptions/ApplicationException.h"
 
 //get user from file
 User *UserHandler::loadUser(const std::string& userName, const std::string& password){
     if(userName.empty() || password.empty())
         throw std::runtime_error("Parameters cannot be empty");
     if(!this->userExist(userName))
-        throw ItemNotFound(userName);
+        ApplicationException(ApplicationException::ErrorType::LoadingFile);
     std::string line = this->findProduct(userName);
     std::stringstream ss(line);
     std::string token;
@@ -28,7 +27,7 @@ User *UserHandler::loadUser(const std::string& userName, const std::string& pass
                 break;
             case 2:
                 if(token != password)
-                    throw IncorrectPassword();
+                    ApplicationException(ApplicationException::ErrorType::RunTime);
                 break;
             default:
                 throw std::runtime_error("");//should be impossible

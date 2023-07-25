@@ -8,7 +8,6 @@
 #include <string>
 #include "User.h"
 #include "FileHandlers/UserHandler.h"
-#include "Exceptions/UserNotLoggedIn.h"
 #include "State.h"
 
 class Listone {

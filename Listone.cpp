@@ -5,10 +5,31 @@
 #include "Listone.h"
 #include "Exceptions/ApplicationException.h"
 
+//singleton stuff
+Listone* Listone::instance = nullptr;
+
+Listone *Listone::getInstance() {
+    static Listone theInstance;
+    instance = &theInstance;
+    return instance;
+}
+
+Listone::Listone(const Listone& rs) {
+    instance = rs.getInstance();
+}
+
+Listone& Listone::operator= (const Listone& rs) {
+    if (this != &rs) {
+        instance = rs.getInstance();
+    }
+    return *this;
+}
+
 Listone::Listone() {
     this->setNewState(State::AppState::StartMenu);
 }
 
+//state stuff
 void Listone::setNewState(State::AppState newState){
     delete currentState;
     switch(newState){
@@ -35,29 +56,10 @@ void Listone::setNewState(State::AppState newState){
     }
 }
 
-
-
-
-
-//singleton stuff
-Listone* Listone::instance = nullptr;
-
-Listone *Listone::getInstance() {
-    static Listone theInstance;
-    instance = &theInstance;
-    return instance;
+State *Listone::getCurrentState() {
+    return currentState;
 }
 
-Listone::Listone(const Listone& rs) {
-    instance = rs.getInstance();
-}
-
-Listone& Listone::operator= (const Listone& rs) {
-    if (this != &rs) {
-        instance = rs.getInstance();
-    }
-    return *this;
-}
 
 
 

@@ -4,7 +4,6 @@
 
 #include "ListHandler.h"
 #include "UserHandler.h"
-#include "../Exceptions/GenericFileError.h"
 
 ListHandler::~ListHandler() {}
 

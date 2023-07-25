@@ -2,7 +2,8 @@
 // Created by samuele on 02/07/23.
 //
 #include "FileHandler.h"
-#include "../Exceptions/GenericFileError.h"
+#include "../Exceptions/ApplicationException.h"
+
 
 void FileHandler::printFactory() {
     //TODO
@@ -13,7 +14,7 @@ std::ifstream* FileHandler::openFile(const std::string& path) {
         throw std::runtime_error("Parameters cannot be empty");
     auto file = new std::ifstream(path.c_str());
     if(!file->is_open()){
-        throw GenericFileError(path);
+        throw ApplicationException(ApplicationException::ErrorType::LoadingFile);
     }
     return file;
 }
@@ -34,7 +35,7 @@ std::string FileHandler::findProduct(const std::string &name) {
         }
     }
     if(!found) {
-        throw GenericFileError(path);
+        throw ApplicationException(ApplicationException::ErrorType::LoadingFile);
     }
     file->close();
     return line;
