@@ -9,7 +9,7 @@ set(SOURCE_FILES User.cpp User.h List.cpp List.h Item.cpp Item.h FileHandlers/In
         Exceptions/ItemNotFound.h Subject.h Observer.h FileHandlers/FileHandler.cpp FileHandlers/FileHandler.h Listone.cpp Listone.h FileHandlers/UserHandler.cpp FileHandlers/UserHandler.h
         Exceptions/GenericFileError.cpp Exceptions/GenericFileError.h FileHandlers/ListHandler.cpp FileHandlers/ListHandler.h
         Exceptions/UserNotLoggedIn.cpp Exceptions/UserNotLoggedIn.h Exceptions/IncorrectPassword.cpp
-        Exceptions/IncorrectPassword.h)
+        Exceptions/IncorrectPassword.h State.h State.cpp)
 
 add_executable(Listone main.cpp)
 add_library(core ${SOURCE_FILES})

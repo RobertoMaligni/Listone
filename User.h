@@ -10,6 +10,7 @@
 #include <list>
 #include "Subject.h"
 
+//TODO
 class User : public Observer {
 public:
     User(int userId, const std::string userName, const std::string password);

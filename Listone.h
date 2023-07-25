@@ -9,26 +9,27 @@
 #include "User.h"
 #include "FileHandlers/UserHandler.h"
 #include "Exceptions/UserNotLoggedIn.h"
+#include "State.h"
 
 class Listone {
 public:
     static Listone* getInstance();
-    bool isRunning() const;
-    void loginUser(const std::string& userName,const std::string& password);
-    void registerUser(const std::string& userName,const std::string& password);
-    void logOut();
-    void createList(const std::string& name) const;
-    void addNonOwnedList(const std::string& listName);
-    void updateList(const std::string &listName,const std::string& itemName, int quantity);
+
+    //State utils
+    void setNewState(State::AppState state);
+    State* getCurrentState();
+
+    //File utils
+    void save();
+    static bool savedFileExists();
+    void loadSaves();
 
 private:
     Listone();
     Listone(const Listone& rs);
     Listone& operator= (const Listone& rs);
-    bool isLoggedIn() const;
 
-    User* user;
-    bool running;
+    State* currentState;
     static Listone* instance;
 };
 

@@ -15,7 +15,7 @@
 #include "FileHandlers/InventoryHandler.h"
 #include "User.h"
 
-
+//TODO
 class List : public Subject{
 public:
     List(const std::string &listName, const std::list<std::shared_ptr<Item>> &items);

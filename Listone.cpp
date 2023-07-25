@@ -3,7 +3,36 @@
 //
 
 #include "Listone.h"
-#include "FileHandlers/ListHandler.h"
+
+void Listone::setNewState(State::AppState newState){
+    delete currentState;
+    switch(newState){
+        case State::AppState::StartMenu:
+            currentState =  nullptr;
+            break;
+        case State::AppState::LogIn:
+            currentState =  nullptr;
+            break;
+        case State::AppState::Register:
+            currentState =  nullptr;
+            break;
+        case State::AppState::MainMenu:
+            currentState = nullptr;
+            break;
+        case State::AppState::ListCreator:
+            currentState =  nullptr;
+            break;
+        case State::AppState::ListModify:
+            currentState =  nullptr;
+            break;
+        default:
+            throw std::runtime_error("");
+    }
+}
+
+
+
+
 
 //singleton stuff
 Listone* Listone::instance = nullptr;
@@ -26,52 +55,4 @@ Listone& Listone::operator= (const Listone& rs) {
 }
 
 
-//other stuff
-Listone::Listone() {
-    running = true;
-    user = nullptr;
-}
 
-bool Listone::isRunning() const {
-    return running;
-}
-void Listone::loginUser(const std::string &userName,const std::string& password) {
-    if(userName.empty() || password.empty())
-        throw std::runtime_error("Parameters cannot be empty");
-    UserHandler factory;
-    if(!factory.userExist(userName))
-        throw ItemNotFound(userName);
-    user = factory.loadUser(userName, password);
-    std::cout << "Welcome back " << userName << " <3" << std::endl;
-}
-
-void Listone::registerUser(const std::string &userName,const std::string &password){
-    UserHandler factory;
-    if(factory.userExist(userName))
-        throw std::runtime_error("User already exists.");
-    user = factory.createUser(userName, password);
-    std::cout << "Welcome " << userName << " <3" << std::endl;
-}
-
-void Listone::logOut() {
-    user = nullptr;
-    std::cout << "Log out successful " << std::endl;
-}
-
-void Listone::createList(const std::string &name) const {
-    if(!this->isLoggedIn()) {
-        throw UserNotLoggedIn();
-    }
-    user->createList(name);
-}
-
-void Listone::updateList(const std::string &listName, const std::string &itemName, int quantity) {
-    if(!this->isLoggedIn()){
-        throw UserNotLoggedIn();
-    }
-    user->listUpdate(listName,itemName,quantity);
-}
-
-bool Listone::isLoggedIn() const{
-    return user != nullptr;
-}
