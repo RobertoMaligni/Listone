@@ -14,10 +14,10 @@ public:
         MissingSaveFiles,
     };
 
-    explicit ApplicationException(ErrorType errorType);
-    ApplicationException(ErrorType errorType, const std::string &error);
+    explicit ApplicationException(ErrorType errorType, const std::string &error = "");
+    ErrorType getErrorType() const;
 
-
+private:
     ErrorType errorType;
 };
 

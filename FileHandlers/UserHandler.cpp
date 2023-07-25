@@ -11,7 +11,7 @@ User *UserHandler::loadUser(const std::string& userName, const std::string& pass
     if(userName.empty() || password.empty())
         throw std::runtime_error("Parameters cannot be empty");
     if(!this->userExist(userName))
-        ApplicationException(ApplicationException::ErrorType::LoadingFile);
+        throw ApplicationException(ApplicationException::ErrorType::LoadingFile);
     std::string line = this->findProduct(userName);
     std::stringstream ss(line);
     std::string token;
@@ -27,7 +27,7 @@ User *UserHandler::loadUser(const std::string& userName, const std::string& pass
                 break;
             case 2:
                 if(token != password)
-                    ApplicationException(ApplicationException::ErrorType::RunTime);
+                    throw ApplicationException(ApplicationException::ErrorType::RunTime);
                 break;
             default:
                 throw std::runtime_error("");//should be impossible
@@ -37,12 +37,11 @@ User *UserHandler::loadUser(const std::string& userName, const std::string& pass
 }
 
 User *UserHandler::loadUser(int userID) {
-    //TODO
     std::string line = std::to_string(userID);
     try{
         line = this->findProduct(line);
-    }catch(GenericFileError& e){
-        throw ItemNotFound(std::to_string(userID));
+    }catch(ApplicationException& e){
+        //TODO
     }
     std::stringstream ss(line);
     std::string token, userName,password;
@@ -74,7 +73,7 @@ User *UserHandler::createUser(const std::string &userName, const std::string &pa
         std::string line = this->findProduct(userName);
         //TODO specify
         throw std::runtime_error("User already exists");
-    }catch(GenericFileError& e){
+    }catch(ApplicationException& e){
         //user dont exists
         int userID = getLastUserID() + 1;
         return new User(userID,userName,password);

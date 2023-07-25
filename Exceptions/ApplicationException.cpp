@@ -4,6 +4,6 @@ ApplicationException::ApplicationException(ApplicationException::ErrorType error
     this->errorType = errorType;
 }
 
-ApplicationException::ApplicationException(ApplicationException::ErrorType errorType) : std::runtime_error("") {
-    this->errorType = errorType;
+ApplicationException::ErrorType ApplicationException::getErrorType() const {
+    return errorType;
 }

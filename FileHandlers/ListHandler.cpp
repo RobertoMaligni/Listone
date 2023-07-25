@@ -68,11 +68,3 @@ List *ListHandler::createList(User *user, const std::string &listName) {
     }
 }
 
-ListUpdate *ListHandler::createListUpdate(const std::string &listName, const std::string &itemName, int quantity) {
-    if(quantity < 0)
-        throw std::runtime_error("");
-    delete this->openFile(path + listName + ".txt"); //list exists?
-    InventoryHandler factory;
-    delete factory.loadItem(itemName); //item exist?
-    return new ListUpdate(listName,itemName,quantity);
-}

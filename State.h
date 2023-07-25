@@ -7,7 +7,8 @@
 
 
 #include <string>
-
+#include <iostream>
+#include <menu.h>
 
 class State {
 public:
@@ -21,6 +22,7 @@ public:
     };
     virtual ~State() = default;
     virtual void changeState(AppState nextState);
+    virtual void draw() = 0;
     virtual void handleInput(const std::string& input) = 0;
     virtual AppState getStateName() = 0;
 

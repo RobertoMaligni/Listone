@@ -23,11 +23,13 @@ public:
     static bool savedFileExists();
     void loadSaves();
 
+
 private:
     Listone();
     Listone(const Listone& rs);
     Listone& operator= (const Listone& rs);
-
+    //TODO
+    User* currentUser;
     State* currentState;
     static Listone* instance;
 };

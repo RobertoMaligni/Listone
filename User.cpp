@@ -4,6 +4,7 @@
 
 #include "User.h"
 #include "FileHandlers/ListHandler.h"
+#include "Exceptions/ApplicationException.h"
 #include <utility>
 
 
@@ -33,8 +34,14 @@ void User::createList(const std::string &listName) {
     List* list;
     try {
         list = factory.loadList(listName);
-    }catch(ItemNotFound& e){
-        list = factory.createList(this,listName);
+    }catch(ApplicationException& e){
+        switch(e.getErrorType()){
+            case ApplicationException::ErrorType::MissingSaveFiles:
+                list = factory.createList(this,listName);
+                break;
+            default:
+                throw ApplicationException(ApplicationException::ErrorType::RunTime);
+        }
     }
     list->registerObserver(this);
 }
