@@ -3,6 +3,11 @@
 //
 
 #include "Listone.h"
+#include "Exceptions/ApplicationException.h"
+
+Listone::Listone() {
+    this->setNewState(State::AppState::StartMenu);
+}
 
 void Listone::setNewState(State::AppState newState){
     delete currentState;
@@ -26,7 +31,7 @@ void Listone::setNewState(State::AppState newState){
             currentState =  nullptr;
             break;
         default:
-            throw std::runtime_error("");
+            throw ApplicationException(ApplicationException::ErrorType::CorruptedAppState);
     }
 }
 
