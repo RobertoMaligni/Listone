@@ -16,13 +16,14 @@ public:
     //override
     ~StartMenu() override = default;
     void draw() override;
-    void handleInput(const std::string &input) override;
+    void handleInput() override;
     AppState getStateName() override;
 private:
-
+    bool inputError = false;
     enum MenuIndex : short{
         Login = 1,
-        Register
+        Register,
+        Exit
     };
 
 };

@@ -17,13 +17,12 @@ public:
         LogIn,
         Register,
         MainMenu,
-        ListCreator,
-        ListModify
+        ListView,
     };
     virtual ~State() = default;
     virtual void changeState(AppState nextState);
     virtual void draw() = 0;
-    virtual void handleInput(const std::string& input) = 0;
+    virtual void handleInput() = 0;
     virtual AppState getStateName() = 0;
 
 };

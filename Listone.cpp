@@ -4,6 +4,7 @@
 
 #include "Listone.h"
 #include "Exceptions/ApplicationException.h"
+#include "StartMenu.h"
 
 //singleton stuff
 Listone* Listone::instance = nullptr;
@@ -34,7 +35,7 @@ void Listone::setNewState(State::AppState newState){
     delete currentState;
     switch(newState){
         case State::AppState::StartMenu:
-            currentState =  nullptr;
+            currentState =  new StartMenu();
             break;
         case State::AppState::LogIn:
             currentState =  nullptr;
@@ -45,10 +46,7 @@ void Listone::setNewState(State::AppState newState){
         case State::AppState::MainMenu:
             currentState = nullptr;
             break;
-        case State::AppState::ListCreator:
-            currentState =  nullptr;
-            break;
-        case State::AppState::ListModify:
+        case State::AppState::ListView:
             currentState =  nullptr;
             break;
         default:
@@ -58,6 +56,10 @@ void Listone::setNewState(State::AppState newState){
 
 State *Listone::getCurrentState() {
     return currentState;
+}
+
+bool Listone::isRunning() {
+    return close;
 }
 
 

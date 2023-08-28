@@ -3,7 +3,6 @@
 //
 
 #include "ListHandler.h"
-#include "UserHandler.h"
 
 ListHandler::~ListHandler() {}
 
@@ -22,7 +21,7 @@ List *ListHandler::loadList(const std::string &listName) {
     }
 
     //load items
-    std::list<Item *> items;
+    std::list<std::shared_ptr<Item>> items;
     while(std::getline(*file,line)){
         std::replace(line.begin(), line.end(), ';', ' ');  // replace ';' by ' '
         ss = std::stringstream(line);
@@ -53,18 +52,18 @@ List *ListHandler::loadList(const std::string &listName) {
             }
             i++;
         }
-        items.push_back(item);
+        items.push_back(static_cast<const std::shared_ptr<Item>>(item));
     }
-    return new List(userIDs,listName,items);
+    return new List(listName,userIDs,items);
 }
 
-List *ListHandler::createList(User *user, const std::string &listName) {
+List *ListHandler::createList(const std::string &listName, User *user) {
     try {
         delete this->openFile(path + listName + ".txt"); //list exists?
         throw std::runtime_error("'" + listName + "' already exists");
-    }catch(GenericFileError& e){
+    }catch(std::runtime_error& e){
         //list dont exists
-        return new List(user, listName);;
+        return new List(listName, user->getUserId());;
     }
 }
 

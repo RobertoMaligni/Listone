@@ -3,16 +3,14 @@
 //
 
 #include "List.h"
-
+#include "Exceptions/ApplicationException.h"
 #include <utility>
 
-List::List( User* user, const std::string &name) : listName(name){
-    if(user == nullptr){
-        throw std::runtime_error("User not passed");
-    }
-}
+List::List(const std::string &listName, const std::list<int>& userIDs, const std::list<std::shared_ptr<Item>> &items) : listName(listName),userIDs(userIDs) items(items) {}
 
-List::List(const std::string &listName, const std::list<std::shared_ptr<Item>> &items) : listName(listName), items(items) {}
+List::List(const std::string &listName, int userID) :  listName(listName){
+    userIDs.push_back(userID);
+}
 
 List::~List() {}
 
@@ -20,7 +18,7 @@ std::weak_ptr<Item> List::findItem(const Item& item) const{
     //TODO fix
     auto findIter = items.end();//= std::find(items.begin(), items.end(), &item);
     if(findIter == items.end()){
-        throw ItemNotFound(item.getName());
+        throw ApplicationException(ApplicationException::ErrorType::RunTime);
     }
     return *findIter;
 }
@@ -34,7 +32,7 @@ std::weak_ptr<Item> List::findItem(const std::string& itemName) const{
         }
     }
     if(findIter == items.end()){
-        throw ItemNotFound(itemName);
+        throw ApplicationException(ApplicationException::ErrorType::RunTime);
     }
     return *findIter;
 }

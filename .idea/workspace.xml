@@ -12,8 +12,8 @@
   <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="Listone" targetName="runListoneTests.cpp" />
-      <config projectName="Listone" targetName="Listone" />
       <config projectName="Listone" targetName="core" />
+      <config projectName="Listone" targetName="Listone" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -24,15 +24,21 @@
   <component name="ChangeListManager">
     <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Major restructuring of the program.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exceptions/ApplicationException.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Exceptions/ApplicationException.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Exceptions/ApplicationException.h" beforeDir="false" afterPath="$PROJECT_DIR$/Exceptions/ApplicationException.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileHandlers/ListHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/ListHandler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileHandlers/UserHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/UserHandler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileHandlers/ListHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/ListHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/List.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Listone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Listone.h" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StartMenu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/StartMenu.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StartMenu.h" beforeDir="false" afterPath="$PROJECT_DIR$/StartMenu.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/State.h" beforeDir="false" afterPath="$PROJECT_DIR$/State.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/User.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/User.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/runFactoryTests.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +70,10 @@
     <option name="majorVersion" value="2023" />
     <option name="minorVersion" value="1.4" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2Rw5IfKdRZxE2ugNc8DFUs5sOIt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -80,13 +90,13 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/samuele/Desktop/PokeMona-master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/samuele/Desktop/Menu&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -101,35 +111,29 @@
     </key>
   </component>
   <component name="RunManager" selected="Google Test.ListoneTest.LoginUser">
-    <configuration name="ListoneTest.LoginUser" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="runListoneTests.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="runListoneTests.cpp" TEST_CLASS="ListoneTest" TEST_METHOD="LoginUser" TEST_MODE="SUITE_TEST">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListoneTest.LoginUser" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="runListoneTests.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="runListoneTests.cpp" TEST_CLASS="ListoneTest" TEST_METHOD="LoginUser" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Listone.LoginUser" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="runListoneTests.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="runListoneTests.cpp" TEST_CLASS="Listone" TEST_METHOD="LoginUser" TEST_MODE="SUITE_TEST">
+    <configuration name="Listone.LoginUser" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="runListoneTests.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="runListoneTests.cpp" TEST_CLASS="Listone" TEST_METHOD="LoginUser" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="runListoneTests.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="runListoneTests.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="runListoneTests.cpp" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Listone" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="Listone" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="Listone">
+    <configuration name="Listone" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="Listone" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="Listone">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="core" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="core" CONFIG_NAME="Debug">
+    <configuration name="core" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="core" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -137,7 +141,6 @@
     <list>
       <item itemvalue="CMake Application.core" />
       <item itemvalue="CMake Application.Listone" />
-      <item itemvalue="Google Test.runListoneTests.cpp" />
       <item itemvalue="Google Test.Listone.LoginUser" />
       <item itemvalue="Google Test.ListoneTest.LoginUser" />
     </list>
@@ -188,6 +191,11 @@
       <workItem from="1690281172024" duration="1794000" />
       <workItem from="1690287430532" duration="1496000" />
       <workItem from="1690311307905" duration="618000" />
+      <workItem from="1692726703601" duration="18000" />
+      <workItem from="1692786580727" duration="3516000" />
+      <workItem from="1692893943877" duration="1578000" />
+      <workItem from="1693158293195" duration="5407000" />
+      <workItem from="1693232157887" duration="5638000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />

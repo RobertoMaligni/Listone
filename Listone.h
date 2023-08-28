@@ -17,6 +17,7 @@ public:
     //State utils
     void setNewState(State::AppState state);
     State* getCurrentState();
+    bool isRunning();
 
     //File utils
     void save();
@@ -28,7 +29,9 @@ private:
     Listone();
     Listone(const Listone& rs);
     Listone& operator= (const Listone& rs);
+
     //TODO
+    bool close = false;
     User* currentUser;
     State* currentState;
     static Listone* instance;

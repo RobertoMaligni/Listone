@@ -9,14 +9,16 @@
 #include <string>
 #include <list>
 #include "Subject.h"
+#include "FileHandlers/ListHandler.h"
+#include "Exceptions/ApplicationException.h"
+#include <utility>
 
 //TODO
-class User : public Observer {
+class User {
 public:
     User(int userId, const std::string userName, const std::string password);
-    ~User() override;
+    ~User() ;
 
-    void update(const std::string&  listName, const std::string& itemName,int quantity) override;
     void createList(const std::string& listName);
     int getUserId() const;
     std::string toString() const;

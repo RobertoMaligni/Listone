@@ -18,8 +18,8 @@
 //TODO
 class List : public Subject{
 public:
-    List(const std::string &listName, const std::list<std::shared_ptr<Item>> &items);
-    List(User* user, const std::string& name);
+    List(const std::string &listName, const std::list<int>& userIDs, const std::list<std::shared_ptr<Item>> &items);
+    List(const std::string &listName, int userID);
     ~List() override;
 
     void registerObserver(Observer *o) override;
@@ -40,6 +40,7 @@ private:
 
 
     std::string listName;
+    std::list<int> userIDs;
     std::list<std::shared_ptr<Item>> items;
     std::list<Observer*> observers;
 };

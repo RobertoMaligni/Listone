@@ -8,11 +8,13 @@
 
 #include "FileHandler.h"
 #include "../List.h"
+#include "UserHandler.h"
+#include "../User.h"
 
 class ListHandler : public FileHandler{
 public:
     List* loadList(const std::string& listName);
-    List* createList( User* user,const std::string& listName);
+    List* createList(const std::string& listName, User *user);
     ~ListHandler() override;
 private:
     const std::string path = "../Files/";

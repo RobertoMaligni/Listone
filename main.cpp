@@ -13,6 +13,9 @@
 
 
 int main() {
+    Listone *listone = Listone::getInstance();
+    while(listone->isRunning()){
 
+    }
     return 0;
 }

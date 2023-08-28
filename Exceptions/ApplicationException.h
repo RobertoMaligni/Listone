@@ -1,5 +1,5 @@
-#ifndef LISTONE_ITEM_H
-#define LISTONE_ITEM_H
+#ifndef LISTONE_APPLICATIONEXCEPTION_H
+#define LISTONE_APPLICATIONEXCEPTION_H
 
 
 #include <stdexcept>
