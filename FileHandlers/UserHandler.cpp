@@ -1,10 +1,6 @@
-//
-// Created by samuele on 03/07/23.
-//
 
-#include <ctime>
 #include "UserHandler.h"
-#include "../Exceptions/ApplicationException.h"
+
 
 //get user from file
 User *UserHandler::loadUser(const std::string& userName, const std::string& password){

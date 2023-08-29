@@ -25,18 +25,18 @@ public:
     void registerObserver(Observer *o) override;
     void removeObserver(Observer *o) override;
     void notifyObservers() const override;
-    void addItem(const Item& item);
-    void checkItem(const Item& item) const;
+
+    void addItem(Item& item);
+    void checkItem(Item& item) const;
 
     const std::string &getName() const;
-    const std::list<std::weak_ptr<Item>> getItems() const;
-    const std::list<std::weak_ptr<Item>> getUnCheckedItems() const;
+    std::list<std::weak_ptr<Item>> getItems() const;
+    std::list<std::weak_ptr<Item>> getUnCheckedItems() const;
 
 
 private:
     std::weak_ptr<Item> findItem(const Item& item) const;
     std::weak_ptr<Item> findItem(const std::string& itemName) const;
-    const std::string& toString() const;
 
 
     std::string listName;

@@ -43,9 +43,9 @@ List *ListHandler::loadList(const std::string &listName) {
                     break;
                 case 3:
                     if(std::stoi(token))
-                        item->unCheckItem();
+                        item->checkItem(false);
                     else
-                        item->checkItem();
+                        item->checkItem(true);
                     break;
                 default:
                     throw std::runtime_error("");

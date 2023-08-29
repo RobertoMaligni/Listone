@@ -2,7 +2,6 @@
 // Created by samuele on 02/07/23.
 //
 #include "FileHandler.h"
-#include "../Exceptions/ApplicationException.h"
 
 
 void FileHandler::printFactory() {

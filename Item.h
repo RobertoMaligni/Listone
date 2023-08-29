@@ -18,7 +18,7 @@ public:
 
     bool isChecked() const;
     void checkItem();
-    void unCheckItem();
+    void checkItem(bool check);
     const std::string &getName() const;
     int getQuantity() const;
     void setQuantity(int quantity);
@@ -29,7 +29,7 @@ private:
     std::string name;
     std::string category;
     int quantity;
-    bool taken;
+    bool checked;
 };
 
 

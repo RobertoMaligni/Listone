@@ -3,6 +3,7 @@
 //
 
 #include "User.h"
+#include "FileHandlers/ListHandler.h"
 
 
 User::User(int userId, const std::string userName, const std::string password) : userID(userId), userName(userName),

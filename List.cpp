@@ -6,7 +6,7 @@
 #include "Exceptions/ApplicationException.h"
 #include <utility>
 
-List::List(const std::string &listName, const std::list<int>& userIDs, const std::list<std::shared_ptr<Item>> &items) : listName(listName),userIDs(userIDs) items(items) {}
+List::List(const std::string &listName, const std::list<int>& userIDs, const std::list<std::shared_ptr<Item>> &items) : listName(listName),userIDs(userIDs), items(items) {}
 
 List::List(const std::string &listName, int userID) :  listName(listName){
     userIDs.push_back(userID);
@@ -55,7 +55,7 @@ void List::notifyObservers() const {
     }
 }
 
-const std::list<std::weak_ptr<Item>> List::getUnCheckedItems() const {
+std::list<std::weak_ptr<Item>> List::getUnCheckedItems() const {
     std::list<std::weak_ptr<Item>> weakItems;
     for(const auto& item : items){
         if(!item->isChecked())
@@ -64,7 +64,7 @@ const std::list<std::weak_ptr<Item>> List::getUnCheckedItems() const {
     return weakItems;
 }
 
-const std::list<std::weak_ptr<Item>> List::getItems() const {
+std::list<std::weak_ptr<Item>> List::getItems() const {
     std::list<std::weak_ptr<Item>> weakItems;
     for(const auto& item : items){
         weakItems.push_back(item);
@@ -72,7 +72,34 @@ const std::list<std::weak_ptr<Item>> List::getItems() const {
     return weakItems;
 }
 
-const std::string &List::toString() const{
-    //TODO
-    return " ";
+void List::addItem(Item &item) {
+    bool found = false;
+    for(const auto& current : items){
+        if(item == *current && !found) {
+            found = true;
+            if(item.getQuantity() == current->getQuantity()){
+                throw ApplicationException(ApplicationException::ErrorType::CorruptedAppState);
+            }
+            current->setQuantity(item.getQuantity());
+        }
+    }
+    if(!found){
+        items.push_back(std::shared_ptr<Item>(&item));
+    }
+}
+
+void List::checkItem(Item &item) const {
+    bool found = false;
+    for(const auto& current : items){
+        if(item == *current && !found) {
+            found = true;
+            if(item.isChecked() && current->isChecked()){
+                throw ApplicationException(ApplicationException::ErrorType::CorruptedAppState);
+            }
+            current->checkItem();
+        }
+    }
+    if(!found){
+        throw ApplicationException(ApplicationException::ErrorType::RunTime);
+    }
 }

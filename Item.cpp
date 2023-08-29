@@ -9,6 +9,7 @@ Item::Item(const std::string& name,const std::string& category, int quantity) : 
     if(quantity < 0){
         throw std::runtime_error("Item quantity cannot be < 0");
     }
+    checked = false;
 }
 
 const std::string &Item::getName() const {
@@ -24,19 +25,19 @@ void Item::setQuantity(int quantity) {
 }
 
 bool Item::isChecked() const {
-    return taken;
+    return checked;
 }
 
 void Item::checkItem() {
-    taken = true;
+    checked = !checked;
 }
 
-void Item::unCheckItem() {
-    taken = false;
+void Item::checkItem(bool check) {
+    checked = check;
 }
 
 std::string Item::toString() const{
-    return name + ";" + category + ";" + std::to_string(quantity) + ";" + std::to_string(taken) +"; \n";
+    return name + ";" + category + ";" + std::to_string(quantity) + ";" + std::to_string(checked) + "; \n";
 }
 
 bool Item::operator==(const Item &rhs) const {
