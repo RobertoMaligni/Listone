@@ -16,7 +16,7 @@ public:
     //override
     ~StartMenu() override = default;
     void draw() override;
-    void handleInput() override;
+    void handleInput(const std::string& line) override;
     AppState getStateName() override;
 private:
     bool inputError = false;

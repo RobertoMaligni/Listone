@@ -12,9 +12,7 @@ StartMenu::StartMenu() {
 }
 
 
-void StartMenu::handleInput() {
-    std::string line;
-    std::getline( std::cin, line );
+void StartMenu::handleInput(const std::string& line) {
     int selection;
     try{
         selection = std::stoi(line);

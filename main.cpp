@@ -15,7 +15,10 @@
 int main() {
     Listone *listone = Listone::getInstance();
     while(listone->isRunning()){
-
+        listone->draw();
+        std::string line;
+        std::getline( std::cin, line );
+        listone->handleInput(line);
     }
     return 0;
 }

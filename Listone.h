@@ -18,6 +18,8 @@ public:
     void setNewState(State::AppState state);
     State* getCurrentState();
     bool isRunning();
+    void handleInput(const std::string& line);
+    void draw();
 
     //File utils
     void save();
@@ -31,7 +33,7 @@ private:
     Listone& operator= (const Listone& rs);
 
     //TODO
-    bool close = false;
+    bool running;
     User* currentUser;
     State* currentState;
     static Listone* instance;

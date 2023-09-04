@@ -22,7 +22,7 @@ public:
     virtual ~State() = default;
     virtual void changeState(AppState nextState);
     virtual void draw() = 0;
-    virtual void handleInput() = 0;
+    virtual void handleInput(const std::string& line) = 0;
     virtual AppState getStateName() = 0;
 
 };

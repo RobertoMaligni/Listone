@@ -28,6 +28,7 @@ Listone& Listone::operator= (const Listone& rs) {
 
 Listone::Listone() {
     this->setNewState(State::AppState::StartMenu);
+    running = true;
 }
 
 //state stuff
@@ -59,7 +60,15 @@ State *Listone::getCurrentState() {
 }
 
 bool Listone::isRunning() {
-    return close;
+    return running;
+}
+
+void Listone::handleInput(const std::string &line) {
+    currentState->handleInput(line);
+}
+
+void Listone::draw() {
+    currentState->draw();
 }
 
 
