@@ -5,6 +5,7 @@
 #include "Listone.h"
 #include "Exceptions/ApplicationException.h"
 #include "StartMenu.h"
+#include "UserMenu.h"
 
 //singleton stuff
 Listone* Listone::instance = nullptr;
@@ -39,10 +40,10 @@ void Listone::setNewState(State::AppState newState){
             currentState =  new StartMenu();
             break;
         case State::AppState::LogIn:
-            currentState =  nullptr;
+            currentState =  new UserMenu(State::AppState::LogIn);
             break;
         case State::AppState::Register:
-            currentState =  nullptr;
+            currentState =  new UserMenu(State::AppState::LogIn);
             break;
         case State::AppState::MainMenu:
             currentState = nullptr;

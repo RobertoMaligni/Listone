@@ -5,10 +5,10 @@
 #include "StartMenu.h"
 
 StartMenu::StartMenu() {
-    std::cout << "-----------------------------------------------" <<  std::endl;
-    std::cout << "              Welcome to Listone!              " << std::endl;
-    std::cout << "-----------------------------------------------" <<  std::endl;
-    std::cout << "-----------------------------------------------" <<  std::endl;
+    State::printCharacter();
+    State::printToCenter("Welcome to Listone!",'.');
+    State::printCharacter();
+    State::printCharacter();
 }
 
 
@@ -41,8 +41,7 @@ State::AppState StartMenu::getStateName() {
 
 void StartMenu::draw() {
     if(inputError){
-        std::cout << "!!!WARNING!!!" <<  std::endl;
-        std::cout << "!!!Selection error!!!" <<  std::endl;
+        printErrorMessage("Selezione errata");
         inputError = false;
     }
     std::cout << "Select one of these option:" <<  std::endl;

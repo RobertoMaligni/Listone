@@ -6,8 +6,23 @@
 #define LISTONE_USERMENU_H
 
 
-class UserMenu {
+#include "State.h"
 
+class UserMenu : public State{
+public:
+    explicit UserMenu(AppState state);
+
+    //override
+    ~UserMenu() override = default;
+    void draw() override;
+    void handleInput(const std::string& line) override;
+    AppState getStateName() override;
+
+private:
+    AppState state;
+    bool emailInput = true;
+    std::string username;
+    std::string password;
 };
 
 
