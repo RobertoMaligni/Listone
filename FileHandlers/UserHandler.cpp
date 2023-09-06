@@ -5,7 +5,7 @@ UserHandler::UserHandler() {
     path = "../Files/Users.txt";
 }
 
-//get user from file
+//get user@FirstList from file
 User *UserHandler::loadUser(const std::string& userName, const std::string& password){
     if(userName.empty() || password.empty())
         throw std::runtime_error("Parameters cannot be empty");
@@ -63,17 +63,17 @@ User *UserHandler::loadUser(int userID) {
     return new User(userID,userName,password);
 }
 
-//create new user runtime
+//create new user@FirstList runtime
 User *UserHandler::createUser(const std::string &userName, const std::string &password){
     if(userName.empty() || password.empty())
         throw std::runtime_error("Parameters cannot be empty");
     try{
-        //if it does not throw means user already exist
+        //if it does not throw means user@FirstList already exist
         std::string line = this->findProduct(userName);
         //TODO specify
         throw std::runtime_error("User already exists");
     }catch(ApplicationException& e){
-        //user dont exists
+        //user@FirstList dont exists
         int userID = getLastUserID() + 1;
         return new User(userID,userName,password);
     }
@@ -82,7 +82,7 @@ User *UserHandler::createUser(const std::string &userName, const std::string &pa
 int UserHandler::getLastUserID() {
     std::string line;
     std::ifstream* file = this->openFile(path);
-    if(this->isEmpty(*file)){ //No user registered
+    if(this->isEmpty(*file)){ //No user@FirstList registered
         return 0;
     }
     while(std::getline(*file,line)){}

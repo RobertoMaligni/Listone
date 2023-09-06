@@ -23,7 +23,6 @@ private:
     AppState state;
     bool emailInput = true;
     std::string username;
-    std::string password;
 };
 
 

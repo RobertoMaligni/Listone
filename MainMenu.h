@@ -6,9 +6,17 @@
 #define LISTONE_MAINMENU_H
 
 
-class MainMenu {
+#include "State.h"
+
+class MainMenu : public State{
 public:
     MainMenu();
+
+    //override
+    ~MainMenu() override = default;
+    void draw() override;
+    void handleInput(const std::string& line) override;
+    AppState getStateName() override;
 };
 
 

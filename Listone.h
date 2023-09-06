@@ -21,12 +21,14 @@ public:
     void handleInput(const std::string& line);
     void draw();
 
-    //File utils
+    /*//File utils
     void save();
     static bool savedFileExists();
-    void loadSaves();
+    void loadSaves();*/
 
-    void setUser(User& user);
+    void setCurrentUser(User& user);
+    const User *getCurrentUser() const;
+
 private:
     Listone();
     Listone(const Listone& rs);

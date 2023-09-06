@@ -6,6 +6,7 @@
 #include "Exceptions/ApplicationException.h"
 #include "StartMenu.h"
 #include "UserMenu.h"
+#include "MainMenu.h"
 
 //singleton stuff
 Listone* Listone::instance = nullptr;
@@ -72,8 +73,12 @@ void Listone::draw() {
     currentState->draw();
 }
 
-void Listone::setUser(User &user) {
+void Listone::setCurrentUser(User &user) {
     this->currentUser = new User(user);
+}
+
+const User *Listone::getCurrentUser() const {
+    return currentUser;
 }
 
 

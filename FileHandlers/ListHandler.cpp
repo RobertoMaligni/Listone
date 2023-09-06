@@ -10,8 +10,8 @@ ListHandler::ListHandler() {
 
 ListHandler::~ListHandler() {}
 
-List *ListHandler::loadList(const std::string &listName) {
-    std::ifstream* file = this->openFile(path + listName + ".txt");
+List *ListHandler::loadList(const std::string &listName, const std::string& username) {
+    std::ifstream* file = this->openFile(path + username + "@" + listName + ".txt");
 
     //load userIDs
     std::string line;

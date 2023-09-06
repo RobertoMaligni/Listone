@@ -23,23 +23,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Building Terminal User Interface">
-      <change afterPath="$PROJECT_DIR$/MainMenu.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainMenu.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Files/user@FirstList" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileHandlers/FileHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/FileHandler.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileHandlers/InventoryHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/InventoryHandler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileHandlers/InventoryHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/InventoryHandler.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileHandlers/ListHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/ListHandler.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileHandlers/ListHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/ListHandler.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileHandlers/UserHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/UserHandler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileHandlers/UserHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/UserHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/MyGroceries" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/Users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/Users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Listone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Listone.h" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainMenu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MainMenu.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainMenu.h" beforeDir="false" afterPath="$PROJECT_DIR$/MainMenu.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/State.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/State.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/User.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/User.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserMenu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/UserMenu.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserMenu.h" beforeDir="false" afterPath="$PROJECT_DIR$/UserMenu.h" afterDir="false" />
     </list>
@@ -207,7 +203,7 @@
       <workItem from="1693499592093" duration="666000" />
       <workItem from="1693845421591" duration="7189000" />
       <workItem from="1693933642728" duration="1274000" />
-      <workItem from="1694017112849" duration="1318000" />
+      <workItem from="1694017112849" duration="5448000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -393,7 +389,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693852602504</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Building Terminal User Interface">
+      <option name="closed" value="true" />
+      <created>1694018504847</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1694018504847</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

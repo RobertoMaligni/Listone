@@ -51,7 +51,7 @@ void List::removeObserver(Observer *o) {
 
 void List::notifyObservers() const {
     for(auto& user : observers){
-        //user->update();
+        //user@FirstList->update();
     }
 }
 

@@ -114,7 +114,7 @@ void UserMenu::handleInput(const std::string &line) {
                 break;
         }
         if(user != nullptr){
-            Listone::getInstance()->setUser(*user);
+            Listone::getInstance()->setCurrentUser(*user);
             this->changeState(State::AppState::MainMenu);
         }
     }
