@@ -26,7 +26,7 @@ public:
     static bool savedFileExists();
     void loadSaves();
 
-
+    void setUser(User& user);
 private:
     Listone();
     Listone(const Listone& rs);

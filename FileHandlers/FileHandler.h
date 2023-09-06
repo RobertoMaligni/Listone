@@ -23,7 +23,7 @@ protected:
     std::ifstream* openFile(const std::string& path);
     std::string findProduct(const std::string& name);
     bool parameterExist(int pos, const std::string &string);
-    const std::string path;
+    std::string path;
 };
 
 #endif //LISTONE_FILEHANDLER_H

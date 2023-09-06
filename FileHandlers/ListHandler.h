@@ -12,11 +12,10 @@
 
 class ListHandler : public FileHandler{
 public:
+    ListHandler();
     List* loadList(const std::string& listName);
     List* createList(const std::string& listName, User* user);
     ~ListHandler() override;
-private:
-    const std::string path = "../Files/";
 
 };
 

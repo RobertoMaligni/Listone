@@ -10,7 +10,9 @@ set(SOURCE_FILES User.cpp User.h List.cpp List.h Item.cpp Item.h FileHandlers/In
         FileHandlers/ListHandler.cpp FileHandlers/ListHandler.h
         State.h State.cpp Exceptions/ApplicationException.cpp Exceptions/ApplicationException.h StartMenu.cpp StartMenu.h
         UserMenu.cpp
-        UserMenu.h)
+        UserMenu.h
+        MainMenu.cpp
+        MainMenu.h)
 
 add_executable(Listone main.cpp)
 add_library(core ${SOURCE_FILES})

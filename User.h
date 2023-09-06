@@ -16,6 +16,7 @@
 class User {
 public:
     User(int userId, const std::string userName, const std::string password);
+    User(User& user);
     ~User() ;
 
     void createList(const std::string& listName);

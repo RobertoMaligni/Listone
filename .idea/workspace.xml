@@ -22,14 +22,26 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Major restructuring of the program.">
+    <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Building Terminal User Interface">
+      <change afterPath="$PROJECT_DIR$/MainMenu.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainMenu.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileHandlers/FileHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/FileHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileHandlers/InventoryHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/InventoryHandler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileHandlers/InventoryHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/InventoryHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileHandlers/ListHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/ListHandler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileHandlers/ListHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/ListHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileHandlers/UserHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/UserHandler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileHandlers/UserHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/UserHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/Users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/Users.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Listone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Listone.h" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StartMenu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/StartMenu.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StartMenu.h" beforeDir="false" afterPath="$PROJECT_DIR$/StartMenu.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/State.h" beforeDir="false" afterPath="$PROJECT_DIR$/State.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/State.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/State.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/User.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/User.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMenu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/UserMenu.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserMenu.h" beforeDir="false" afterPath="$PROJECT_DIR$/UserMenu.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +93,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/samuele/Desktop/Menu&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/samuele/Desktop/PokeMona&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -103,6 +115,11 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.Listone">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ListoneTest.LoginUser" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="runListoneTests.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="runListoneTests.cpp" TEST_CLASS="ListoneTest" TEST_METHOD="LoginUser" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -188,7 +205,9 @@
       <workItem from="1693321103040" duration="506000" />
       <workItem from="1693321649893" duration="5660000" />
       <workItem from="1693499592093" duration="666000" />
-      <workItem from="1693845421591" duration="333000" />
+      <workItem from="1693845421591" duration="7189000" />
+      <workItem from="1693933642728" duration="1274000" />
+      <workItem from="1694017112849" duration="1318000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -358,7 +377,23 @@
       <option name="project" value="LOCAL" />
       <updated>1693328635017</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Major restructuring of the program.">
+      <option name="closed" value="true" />
+      <created>1693846502670</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1693846502670</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Building Terminal User Interface">
+      <option name="closed" value="true" />
+      <created>1693852602504</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1693852602504</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +443,8 @@
     <MESSAGE value="Fixed const correctness of strings" />
     <MESSAGE value="Started unit testing with framework Gtest" />
     <MESSAGE value="Major restructuring of the program." />
-    <option name="LAST_COMMIT_MESSAGE" value="Major restructuring of the program." />
+    <MESSAGE value="Building Terminal User Interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Building Terminal User Interface" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -11,6 +11,10 @@ User::User(int userId, const std::string userName, const std::string password) :
     this->loadUserLists();
 }
 
+User::User(User &user) {
+
+}
+
 User::~User() {}
 
 

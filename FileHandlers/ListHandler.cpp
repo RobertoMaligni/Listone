@@ -4,6 +4,10 @@
 
 #include "ListHandler.h"
 
+ListHandler::ListHandler() {
+    path = "../Files/";
+}
+
 ListHandler::~ListHandler() {}
 
 List *ListHandler::loadList(const std::string &listName) {

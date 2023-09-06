@@ -21,6 +21,11 @@ void State::printToCenter(const std::string &string, char character) {
         center--;
     }
     std::cout << string << std::endl;
+    center = (CENTER_CHARACTERS + (int)string.size())/2;
+    while(center != CENTER_CHARACTERS){
+        std::cout << character;
+        center++;
+    }
 }
 
 void State::printCharacter(char character, unsigned int quantity) {

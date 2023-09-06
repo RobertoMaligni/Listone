@@ -10,10 +10,9 @@
 
 class InventoryHandler : public FileHandler{
 public:
+    InventoryHandler();
     Item* loadItem(const std::string& name);
     ~InventoryHandler() override;
-private:
-    const std::string path = "../Files/Inventory.txt";
 };
 
 

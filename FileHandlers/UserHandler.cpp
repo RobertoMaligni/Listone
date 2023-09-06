@@ -1,6 +1,9 @@
 
 #include "UserHandler.h"
 
+UserHandler::UserHandler() {
+    path = "../Files/Users.txt";
+}
 
 //get user from file
 User *UserHandler::loadUser(const std::string& userName, const std::string& password){

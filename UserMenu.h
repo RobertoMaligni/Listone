@@ -7,10 +7,11 @@
 
 
 #include "State.h"
+#include "User.h"
 
 class UserMenu : public State{
 public:
-    explicit UserMenu(AppState state);
+    UserMenu(AppState state);
 
     //override
     ~UserMenu() override = default;

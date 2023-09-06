@@ -4,6 +4,10 @@
 
 #include "InventoryHandler.h"
 
+InventoryHandler::InventoryHandler() {
+    path = "../Files/Inventory.txt";
+}
+
 Item* InventoryHandler::loadItem(const std::string &name) {
     std::string line = findProduct(name); //fine if propagate since the main has to handle this exception
 
@@ -19,5 +23,4 @@ Item* InventoryHandler::loadItem(const std::string &name) {
 }
 
 InventoryHandler::~InventoryHandler() {}
-
 

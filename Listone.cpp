@@ -46,7 +46,7 @@ void Listone::setNewState(State::AppState newState){
             currentState =  new UserMenu(State::AppState::LogIn);
             break;
         case State::AppState::MainMenu:
-            currentState = nullptr;
+            currentState = new MainMenu();
             break;
         case State::AppState::ListView:
             currentState =  nullptr;
@@ -70,6 +70,10 @@ void Listone::handleInput(const std::string &line) {
 
 void Listone::draw() {
     currentState->draw();
+}
+
+void Listone::setUser(User &user) {
+    this->currentUser = new User(user);
 }
 
 
