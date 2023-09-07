@@ -11,7 +11,49 @@ ListHandler::ListHandler() {
 ListHandler::~ListHandler() {}
 
 List *ListHandler::loadList(const std::string &listName, const std::string& username) {
-    std::ifstream* file = this->openFile(path + username + "@" + listName + ".txt");
+    //TODO
+    return loadListByPath(path + username + "@" + listName + ".txt");
+}
+
+List *ListHandler::createList(const std::string &listName, User *user) {
+    //TODO
+    try {
+        delete this->openFile(path + listName + ".txt"); //list exists?
+        throw std::runtime_error("'" + listName + "' already exists");
+    }catch(std::runtime_error& e){
+        //list dont exists
+        return new List(listName, user->getUserId());;
+    }
+}
+//TODO
+std::list<List> ListHandler::loadList(const std::string &username) {
+    std::list<List> list;
+    int counter = 1;
+    bool finished = false;
+    std::list<std::string> fileNames;
+    while(!finished){
+        std::string fileName = username + "@" + std::to_string(counter);
+        try{
+            std::ifstream* file = this->openFile(path + fileName);
+            fileNames.push_back(path + fileName);
+            file->close();
+        }catch(ApplicationException& e){
+            finished = true;
+        }
+    }
+    for(auto& fileName : fileNames){
+        std::ifstream* file = this->openFile(fileName);
+
+    }
+    return list;
+}
+
+List *ListHandler::loadListByPath(const std::string &path) {
+    std::ifstream* file = this->openFile(path);
+
+    //load list name
+    std::string listName;
+    std::getline(*file,listName);
 
     //load userIDs
     std::string line;
@@ -59,15 +101,5 @@ List *ListHandler::loadList(const std::string &listName, const std::string& user
         items.push_back(static_cast<const std::shared_ptr<Item>>(item));
     }
     return new List(listName,userIDs,items);
-}
-
-List *ListHandler::createList(const std::string &listName, User *user) {
-    try {
-        delete this->openFile(path + listName + ".txt"); //list exists?
-        throw std::runtime_error("'" + listName + "' already exists");
-    }catch(std::runtime_error& e){
-        //list dont exists
-        return new List(listName, user->getUserId());;
-    }
 }
 
