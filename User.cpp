@@ -8,7 +8,8 @@
 
 User::User(int userId, const std::string userName, const std::string password) : userID(userId), userName(userName),
                                                                      password(password) {
-    this->loadUserLists();
+    ListHandler handler;
+
 }
 
 User::User(User &user) {
@@ -35,7 +36,7 @@ void User::createList(const std::string &listName) {
     ListHandler factory;
     List* list;
     /*try {
-        list = factory.loadList(listName);
+        list = factory.loadListsByUser(listName);
     }catch(ApplicationException& e){
         switch(e.getErrorType()){
             case ApplicationException::ErrorType::MissingSaveFiles:

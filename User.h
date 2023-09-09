@@ -10,6 +10,7 @@
 #include <list>
 #include "Subject.h"
 #include "Exceptions/ApplicationException.h"
+#include "List.h"
 #include <utility>
 
 //TODO
@@ -26,6 +27,7 @@ public:
 private:
     void loadUserLists();
 
+    std::list<List> lists;
     int userID;
     std::string userName;
     std::string password;

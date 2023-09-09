@@ -16,6 +16,7 @@ public:
     User* loadUser(int userID);
     User* createUser(const std::string& userName, const std::string& password);
     bool userExist(const std::string& userName);
+    std::list<std::string> getUserNames();
 private:
     int getLastUserID();
 };

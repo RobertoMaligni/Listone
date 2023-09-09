@@ -99,5 +99,11 @@ bool UserHandler::userExist(const std::string &userName) {
     return this->parameterExist(2,userName);;
 }
 
+std::list<std::string> UserHandler::getUserNames() {
+    std::list<std::string> users;
+
+    return users;
+}
+
 
 

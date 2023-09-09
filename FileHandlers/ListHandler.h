@@ -14,12 +14,19 @@
 class ListHandler : public FileHandler{
 public:
     ListHandler();
-    List* loadList(const std::string& listName, const std::string& username);
-    std::list<List> loadList(const std::string& username);
-    List* createList(const std::string& listName, User* user);
     ~ListHandler() override;
+    //TODO add way to save
+
+    List* loadListByName(const std::string& listName, const std::string& username);
+    std::list<List> loadListsByUser(const std::string& username);
+    std::list<List> loadAllListsByUser(const std::string& username);
+
+    List* createList(const std::string& listName, User* user);
 private:
+    std::list<std::string> getUserOwnedListPaths(const std::string& username);
+    std::list<std::string> getAllUserListPaths(int userID, const std::string& username);
     List* loadListByPath(const std::string& path);
+
 };
 
 
