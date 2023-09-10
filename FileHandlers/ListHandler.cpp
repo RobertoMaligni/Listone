@@ -46,22 +46,22 @@ List *ListHandler::loadListByName(const std::string &listName, const std::string
     return list;
 }
 
-std::list<List> ListHandler::loadListsByUser(const std::string &username) {
-    std::list<List> list;
-    std::list<std::string> fileNames = getUserOwnedListPaths(username);
+std::list<List>& ListHandler::loadListsOwnedByUser(const std::string &username) {
+    std::list<List>* list;
+    std::list<std::string> fileNames = this->getUserOwnedListPaths(username);
     for(auto& fileName : fileNames){
-        list.push_back(*loadListByPath(fileName));
+        list->push_back(*loadListByPath(fileName));
     }
-    return list;
+    return *list;
 }
 
-std::list<List> ListHandler::loadAllListsByUser(const std::string &username) {
-    std::list<List> list;
-    std::list<std::string> fileNames = getUserOwnedListPaths(username);
+std::list<List>& ListHandler::loadListsNonOwnedByUser(int userID,const std::string &username) {
+    std::list<List>* list;
+    std::list<std::string> fileNames = this->getNonUserOwnedListPaths(userID,username);
     for(auto& fileName : fileNames){
-        list.push_back(*loadListByPath(fileName));
+        list->push_back(*loadListByPath(fileName));
     }
-    return list;
+    return *list;
 }
 
 List* ListHandler::loadListByPath(const std::string &path) {
@@ -117,7 +117,19 @@ List* ListHandler::loadListByPath(const std::string &path) {
         }
         items.push_back(static_cast<const std::shared_ptr<Item>>(item));
     }
+    file->close();
     return new List(listName,userIDs,items);
+}
+
+std::list<std::string> ListHandler::getAllListPaths() {
+    UserHandler handler;
+    std::list<std::string> fileNames;
+    for(auto &userName :  handler.getUserNames()){
+        fileNames.insert(fileNames.end(),
+                         this->getUserOwnedListPaths(userName).begin(),
+                         this->getUserOwnedListPaths(userName).end());
+    }
+    return fileNames;
 }
 
 std::list<std::string> ListHandler::getUserOwnedListPaths(const std::string& username) {
@@ -125,7 +137,7 @@ std::list<std::string> ListHandler::getUserOwnedListPaths(const std::string& use
     bool finished = false;
     std::list<std::string> fileNames;
     while(!finished){
-        std::string fileName = username + "@" + std::to_string(counter);
+        std::string fileName = username + "@" + std::to_string(counter++);
         try{
             std::ifstream* file = this->openFile(path + fileName);
             fileNames.push_back(path + fileName);
@@ -137,9 +149,20 @@ std::list<std::string> ListHandler::getUserOwnedListPaths(const std::string& use
     return fileNames;
 }
 
-std::list<std::string> ListHandler::getAllUserListPaths(int userID, const std::string &username) {
-    std::list<std::string> fileNames = getUserOwnedListPaths(username);
-    //TODO
+std::list<std::string> ListHandler::getNonUserOwnedListPaths(int userID, const std::string &username) {
+    std::list<std::string> fileNames;
+    for(auto &path : this->getAllListPaths()){
+        if(path.find(username) == std::string::npos){ //parse by the name of the file the ownership
+            List* list = this->loadListByPath(path);
+            if(list->isUserInCoop(userID)) //if its in the list of ids its valid
+                fileNames.push_back(path);
+        }
+    }
     return fileNames;
 }
+
+void ListHandler::saveList(List &list) {
+//TODO add way to save
+}
+
 

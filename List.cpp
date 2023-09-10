@@ -6,7 +6,7 @@
 #include "Exceptions/ApplicationException.h"
 #include <utility>
 
-List::List(const std::string &listName, const std::list<int>& userIDs, const std::list<std::shared_ptr<Item>> &items) : listName(listName),userIDs(userIDs), items(items) {}
+List::List(const std::string &listName, const std::list<int>& userIDs, const std::list<std::shared_ptr<Item>> &items) : listName(listName), userIDs(userIDs), items(items) {}
 
 List::List(const std::string &listName, int userID) :  listName(listName){
     userIDs.push_back(userID);
@@ -102,4 +102,14 @@ void List::checkItem(Item &item) const {
     if(!found){
         throw ApplicationException(ApplicationException::ErrorType::RunTime);
     }
+}
+
+bool List::isUserInCoop(int userID) {
+    bool found = false;
+    for(int &i : userIDs){
+        if(!found && i == userID){
+            found = true;
+        }
+    }
+    return found;
 }

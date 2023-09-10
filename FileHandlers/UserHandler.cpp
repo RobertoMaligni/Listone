@@ -37,11 +37,7 @@ User *UserHandler::loadUser(const std::string& userName, const std::string& pass
 
 User *UserHandler::loadUser(int userID) {
     std::string line = std::to_string(userID);
-    try{
-        line = this->findProduct(line);
-    }catch(ApplicationException& e){
-        //TODO
-    }
+    line = this->findProduct(line); //exception may be thrown
     std::stringstream ss(line);
     std::string token, userName,password;
     for (int i = 0; ss >> token; i++){
@@ -89,7 +85,8 @@ int UserHandler::getLastUserID() {
     std::replace(line.begin(), line.end(), ';', ' ');  // replace ';' by ' '
     std::stringstream ss(line);
     std::string token;
-    ss >> token; //ID
+    ss >> token; //this is the ID
+    file->close();
     return std::stoi(token);
 }
 
@@ -101,7 +98,19 @@ bool UserHandler::userExist(const std::string &userName) {
 
 std::list<std::string> UserHandler::getUserNames() {
     std::list<std::string> users;
-
+    std::string line;
+    std::ifstream* file = this->openFile(path);
+    if(!this->isEmpty(*file)) {
+        while (std::getline(*file, line)) {
+            std::replace(line.begin(), line.end(), ';', ' ');  // replace ';' by ' '
+            std::stringstream ss(line);
+            std::string token;
+            ss >> token; //ID
+            ss >> token; //username
+            users.push_back(token);
+        }
+    }
+    file->close();
     return users;
 }
 

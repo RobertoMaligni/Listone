@@ -16,21 +16,24 @@
 //TODO
 class User {
 public:
-    User(int userId, const std::string userName, const std::string password);
+    User(int userId, const std::string& userName, const std::string& password);
     User(User& user);
-    ~User() ;
+    ~User();
 
     void createList(const std::string& listName);
     int getUserId() const;
+    std::string getUserName() const;
     std::string toString() const;
 
 private:
     void loadUserLists();
 
-    std::list<List> lists;
     int userID;
     std::string userName;
     std::string password;
+
+    std::list<List> ownedLists;
+    std::list<List> coopLists;
 };
 
 

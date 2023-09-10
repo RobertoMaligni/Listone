@@ -33,6 +33,12 @@ public:
     std::list<std::weak_ptr<Item>> getItems() const;
     std::list<std::weak_ptr<Item>> getUnCheckedItems() const;
 
+    //TODO
+    void addCoopUserID(int userID);
+    void removeCoopUserID(int userID);
+    bool isUserInCoop(int userID);
+
+
 
 private:
     std::weak_ptr<Item> findItem(const Item& item) const;

@@ -23,21 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2464f7ed-b04a-42db-9a77-80db157aa3a7" name="Changes" comment="Building Terminal User Interface">
-      <change afterPath="$PROJECT_DIR$/Files/user@FirstList" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileHandlers/ListHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/ListHandler.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileHandlers/ListHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/ListHandler.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileHandlers/UserHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileHandlers/UserHandler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/MyGroceries" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/Users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/Users.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Listone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Listone.h" beforeDir="false" afterPath="$PROJECT_DIR$/Listone.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainMenu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MainMenu.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainMenu.h" beforeDir="false" afterPath="$PROJECT_DIR$/MainMenu.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/State.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/State.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserMenu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/UserMenu.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserMenu.h" beforeDir="false" afterPath="$PROJECT_DIR$/UserMenu.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/List.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/User.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/User.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,11 +105,6 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.Listone">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ListoneTest.LoginUser" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Listone" TARGET_NAME="runListoneTests.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Listone" RUN_TARGET_NAME="runListoneTests.cpp" TEST_CLASS="ListoneTest" TEST_METHOD="LoginUser" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -204,6 +193,8 @@
       <workItem from="1693845421591" duration="7189000" />
       <workItem from="1693933642728" duration="1274000" />
       <workItem from="1694017112849" duration="5448000" />
+      <workItem from="1694352810445" duration="6198000" />
+      <workItem from="1694359596154" duration="1591000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
